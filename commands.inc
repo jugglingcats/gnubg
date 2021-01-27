@@ -204,6 +204,9 @@ static command acAnnotateRoll[] = {
     { "text", CommandExportMatchText, 
       N_("Records a log of the match in text format"), 
       szFILENAME, &cFilename },
+    { "bgh", CommandExportMatchBackgammonHub,
+      N_("Records a log of the session in Backgammon Hub format"),
+      szFILENAME, &cFilename },
     { "pdf", CommandExportMatchPDF, N_("Save the current match in "
       "PDF format"), szFILENAME, &cFilename },
     { "ps", CommandExportMatchPS, N_("Save the current match in "
@@ -250,6 +253,9 @@ static command acAnnotateRoll[] = {
       "LaTeX format"), szFILENAME, &cFilename },
     { "text", CommandExportMatchText,
       N_("Records a log of the session in text format"),
+      szFILENAME, &cFilename },
+    { "bgh", CommandExportMatchBackgammonHub,
+      N_("Records a log of the session in Backgammon Hub format"),
       szFILENAME, &cFilename },
     { NULL, NULL, NULL, NULL, NULL }
 }, acExport[] = {

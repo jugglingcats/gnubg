@@ -130,6 +130,7 @@ gnubg_SOURCES = \
 		sound.h \
 		speed.c \
 		text.c \
+		bgh.c \
 		timer.c \
 		util.h \
 		util.c 

@@ -584,6 +584,7 @@ extern void CommandExportMatchSnowieTxt(char *);
 extern void CommandExportMatchPDF(char *);
 extern void CommandExportMatchPS(char *);
 extern void CommandExportMatchText(char *);
+extern void CommandExportMatchBackgammonHub(char *);
 extern void CommandExportPositionGammOnLine(char *);
 extern void CommandExportPositionGOL2Clipboard(char *);
 extern void CommandExportPositionHtml(char *);
