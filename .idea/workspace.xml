@@ -1140,7 +1140,7 @@
       <updated>1611771580639</updated>
       <workItem from="1611771581812" duration="32765000" />
       <workItem from="1611919253339" duration="8000" />
-      <workItem from="1611934489730" duration="16225000" />
+      <workItem from="1611934489730" duration="18853000" />
     </task>
     <task id="LOCAL-00001" summary="Added bgh file export without any change">
       <created>1611786063610</created>
@@ -1156,7 +1156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612130725109</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changes">
+      <created>1612131150779</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612131150779</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
