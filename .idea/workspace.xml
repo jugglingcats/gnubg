@@ -148,18 +148,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4542e753-6fe8-4ae9-aef0-c3ddad16bef1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bgh.c" beforeDir="false" afterPath="$PROJECT_DIR$/bgh.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credits.c" beforeDir="false" afterPath="$PROJECT_DIR$/credits.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/external_l.c" beforeDir="false" afterPath="$PROJECT_DIR$/external_l.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/external_y.c" beforeDir="false" afterPath="$PROJECT_DIR$/external_y.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/external_y.h" beforeDir="false" afterPath="$PROJECT_DIR$/external_y.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sgf_l.c" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_l.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sgf_y.c" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_y.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sgf_y.h" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_y.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1135,8 +1125,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.Docker Image (1)" />
-        <item itemvalue="Docker.Docker Image" />
         <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.Docker Image" />
       </list>
     </recent_temporary>
   </component>
@@ -1150,7 +1140,7 @@
       <updated>1611771580639</updated>
       <workItem from="1611771581812" duration="32765000" />
       <workItem from="1611919253339" duration="8000" />
-      <workItem from="1611934489730" duration="15663000" />
+      <workItem from="1611934489730" duration="16225000" />
     </task>
     <task id="LOCAL-00001" summary="Added bgh file export without any change">
       <created>1611786063610</created>
@@ -1159,7 +1149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611786063610</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changes">
+      <created>1612130725109</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1612130725109</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1167,6 +1164,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added bgh file export without any change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added bgh file export without any change" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
 </project>
