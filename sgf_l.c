@@ -1,6 +1,6 @@
-#line 1 "sgf_l.c"
+#line 2 "sgf_l.c"
 
-#line 3 "sgf_l.c"
+#line 4 "sgf_l.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -1262,10 +1262,10 @@ static int error( char *s ) {
 }
 
 #define YY_FATAL_ERROR(m) error(m)
-#line 1265 "sgf_l.c"
+#line 1266 "sgf_l.c"
 #define YY_NO_INPUT 1
 
-#line 1268 "sgf_l.c"
+#line 1269 "sgf_l.c"
 
 #define INITIAL 0
 #define value 1
@@ -1483,7 +1483,7 @@ YY_DECL
 	{
 #line 67 "sgf_l.l"
 
-#line 1486 "sgf_l.c"
+#line 1487 "sgf_l.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1606,7 +1606,7 @@ YY_RULE_SETUP
 #line 100 "sgf_l.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
-#line 1609 "sgf_l.c"
+#line 1610 "sgf_l.c"
 			case YY_STATE_EOF(INITIAL):
 			case YY_STATE_EOF(value):
 				yyterminate();

@@ -1,6 +1,6 @@
-#line 1 "external_l.c"
+#line 2 "external_l.c"
 
-#line 3 "external_l.c"
+#line 4 "external_l.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -968,10 +968,10 @@ void escapes(const char *cp, char *tp);
 
 #define BUFFERSIZE 2048
 
-#line 971 "external_l.c"
+#line 972 "external_l.c"
 #define YY_NO_INPUT 1
  
-#line 974 "external_l.c"
+#line 975 "external_l.c"
 
 #define INITIAL 0
 #define SBOARDP1 1
@@ -1250,7 +1250,7 @@ YY_DECL
 #line 68 "external_l.l"
 
 
-#line 1253 "external_l.c"
+#line 1254 "external_l.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1555,7 +1555,7 @@ YY_RULE_SETUP
 #line 155 "external_l.l"
 ECHO;
 	YY_BREAK
-#line 1558 "external_l.c"
+#line 1559 "external_l.c"
 
 	case YY_END_OF_BUFFER:
 		{

@@ -148,8 +148,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4542e753-6fe8-4ae9-aef0-c3ddad16bef1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/AUTHORS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bgh.c" beforeDir="false" afterPath="$PROJECT_DIR$/bgh.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credits.c" beforeDir="false" afterPath="$PROJECT_DIR$/credits.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_l.c" beforeDir="false" afterPath="$PROJECT_DIR$/external_l.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_y.c" beforeDir="false" afterPath="$PROJECT_DIR$/external_y.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/external_y.h" beforeDir="false" afterPath="$PROJECT_DIR$/external_y.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgf_l.c" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_l.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgf_y.c" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_y.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sgf_y.h" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_y.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,12 +245,7 @@
       <recent name="D:\alfie\projects\gnubg-1.06.002" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Docker Image (1)">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Makefile Application.read and export">
     <configuration name="ABOUT-NLS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ABOUT-NLS" CONFIG_NAME="ABOUT-NLS" version="1">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
@@ -921,11 +926,6 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Docker Image (1)" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
       <deployment type="docker-image">
         <settings>
@@ -1140,7 +1140,10 @@
       <updated>1611771580639</updated>
       <workItem from="1611771581812" duration="32765000" />
       <workItem from="1611919253339" duration="8000" />
-      <workItem from="1611934489730" duration="18853000" />
+      <workItem from="1611934489730" duration="19627000" />
+      <workItem from="1612215833832" duration="3353000" />
+      <workItem from="1612279386681" duration="40000" />
+      <workItem from="1612279746329" duration="2377000" />
     </task>
     <task id="LOCAL-00001" summary="Added bgh file export without any change">
       <created>1611786063610</created>
@@ -1163,7 +1166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612131150779</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="chmod">
+      <created>1612133726343</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612133726343</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1172,6 +1182,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added bgh file export without any change" />
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="chmod" />
+    <option name="LAST_COMMIT_MESSAGE" value="chmod" />
   </component>
 </project>

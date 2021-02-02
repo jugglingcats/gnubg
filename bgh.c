@@ -93,7 +93,7 @@ BghMoveIntro(GString *gsz, const matchstate *pms, const int UNUSED(iGame), const
     else if (pms->anDice[0] && pms->anDice[1])
         g_string_append_printf(gsz, _("%u%u"), pms->anDice[0], pms->anDice[1]);
 //    else if (pms->fDoubled)
-        /* take decision */
+    /* take decision */
 //        g_string_append(gsz, "--TAKE--");
 //        g_string_append_printf(gsz, _("Double:%d"), pms->nCube * 2);
 //    else
@@ -285,7 +285,7 @@ OutputCubeAnalysisFullBgh(float aarOutput[2][NUM_ROLLOUT_OUTPUTS],
                                  arDouble[OUTPUT_DROP] : arDouble[OUTPUT_TAKE], arDouble[OUTPUT_NODOUBLE], pci));
     }
 
-    if ( !fAnno ) {
+    if (!fAnno) {
         strcat(sz, "okay:0");
     }
 
@@ -666,18 +666,18 @@ static void formatPlay(GString *gsz, const statcontext *psc, float aaaar[3][2][2
     int n;
 
     g_string_append_printf(gsz, "\n>%s", szType[type]);
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 1; i >= 0; --i) {
         // Error total EMG (MWC)
         g_string_append_printf(gsz, ":%+.3f:%+.3f", -aaaar[type][TOTAL][i][NORMALISED],
-                               -aaaar[type][TOTAL][i][UNNORMALISED]);
+                               -aaaar[type][TOTAL][i][UNNORMALISED] * 100);
 
         // Error rate mEMG (MWC)
         g_string_append_printf(gsz, ":%+.3f:%+.3f", -aaaar[type][PERMOVE][i][NORMALISED] * 1000,
-                               -aaaar[type][PERMOVE][i][UNNORMALISED] * 1000);
+                               -aaaar[type][PERMOVE][i][UNNORMALISED] * 100);
 
         // Error rate snowie
         if ((n = psc->anTotalMoves[0] + psc->anTotalMoves[1]) > 0)
-            g_string_append_printf(gsz, ":%+.3f", (float) aaaar[type][TOTAL][i][NORMALISED] / (float) n * 1000);
+            g_string_append_printf(gsz, ":%+.3f", (float) aaaar[type][TOTAL][i][NORMALISED] / (float) n * -1000);
         else
             g_string_append(gsz, ":na");
 
@@ -690,287 +690,43 @@ static void formatPlay(GString *gsz, const statcontext *psc, float aaaar[3][2][2
     }
 }
 
-static void
-formatGSBgh(GString *gsz, const statcontext *psc, const int nMatchTo, const enum _formatgs fg) {
-    float aaaar[3][2][2][2];
-    getMWCFromError(psc, aaaar);
-
-    switch (fg) {
-        case FORMATGS_CHEQUER:
-            formatPlay(gsz, psc, aaaar, CHEQUERPLAY);
-            break;
-
-        case FORMATGS_CUBE:
-            formatPlay(gsz, psc, aaaar, CUBEDECISION);
-            break;
-
-        case FORMATGS_OVERALL:
-            formatPlay(gsz, psc, aaaar, COMBINED);
-            break;
-
-        case FORMATGS_LUCK:
-            g_string_append(gsz, "\n>LK");
-            for (int i = 0; i < 2; ++i) {
-                g_string_append_printf(gsz, ":%+.3f:%+.3f", psc->arLuck[i][0], psc->arLuck[i][1]);
-                g_string_append_printf(gsz, ":%+.3f:%+.3f", (float) psc->arLuck[i][0] / (float) psc->anTotalMoves[i],
-                                       psc->arLuck[i][1] / (float) psc->anTotalMoves[i]);
-                if (psc->anTotalMoves[i])
-                    g_string_append_printf(gsz, ":%s", aszBghLuckRating[getLuckRating(
-                            psc->arLuck[i][0] / (float) psc->anTotalMoves[i])]);
-                else
-                    g_string_append(gsz, ":na");
-            }
-            break;
-/*
-            case FORMATGS_OVERALL: {
-                int i, n;
-
-                */
-/* total error rate *//*
-
-
-                aasz = g_malloc(3 * sizeof(*aasz));
-
-                if (psc->fCube || psc->fMoves) {
-
-                    aasz[0] = g_strdup_printf(_("Error total %s"), total_text(nMatchTo));
-
-                    for (i = 0; i < 2; ++i)
-                        aasz[i + 1] = errorRate(-aaaar[COMBINED][TOTAL][i][NORMALISED],
-                                                -aaaar[COMBINED][TOTAL][i][UNNORMALISED], nMatchTo);
-
-                    list = g_list_append(list, aasz);
-
-                    */
-/* error rate per decision *//*
-
-
-                    aasz = g_malloc(3 * sizeof(*aasz));
-
-                    aasz[0] = g_strdup_printf(_("Error rate %s"), rate_text(nMatchTo));
-
-                    for (i = 0; i < 2; ++i)
-                        aasz[i + 1] = errorRateMP(-aaaar[COMBINED][PERMOVE][i][NORMALISED],
-                                                  -aaaar[COMBINED][PERMOVE][i][UNNORMALISED], nMatchTo);
-
-                    list = g_list_append(list, aasz);
-
-                    */
-/* eq. snowie error rate *//*
-
-
-                    aasz = g_malloc(3 * sizeof(*aasz));
-
-                    aasz[0] = g_strdup(_("Snowie error rate"));
-
-                    for (i = 0; i < 2; ++i)
-                        if ((n = psc->anTotalMoves[0] + psc->anTotalMoves[1]) > 0)
-                            aasz[i + 1] = errorRateMP(-aaaar[COMBINED][TOTAL][i][NORMALISED] / n, 0.0f, nMatchTo);
-                        else
-                            aasz[i + 1] = g_strdup(_("n/a"));
-
-                    list = g_list_append(list, aasz);
-
-                    */
-/* rating *//*
-
-
-                    aasz = g_malloc(3 * sizeof(*aasz));
-
-                    aasz[0] = g_strdup(_("Overall rating"));
-
-                    for (i = 0; i < 2; ++i)
-                        if (psc->anCloseCube[i] + psc->anUnforcedMoves[i])
-                            aasz[i + 1] = g_strdup(Q_(aszRating[GetRating(aaaar[COMBINED][PERMOVE][i][NORMALISED])]));
-                        else
-                            aasz[i + 1] = g_strdup(_("n/a"));
-
-                    list = g_list_append(list, aasz);
-
-                }
-
-                if (psc->fDice) {
-
-                    */
-/* luck adj. result *//*
-
-
-                    if ((psc->arActualResult[0] > 0.0f || psc->arActualResult[1] > 0.0f) && psc->fDice) {
-
-                        list = g_list_append(list, luckAdjust(_("Actual result"), psc->arActualResult, nMatchTo));
-
-                        list = g_list_append(list, luckAdjust(_("Luck adjusted result"), psc->arLuckAdj, nMatchTo));
-
-                        if (nMatchTo) {
-
-                            */
-/* luck based fibs rating *//*
-
-
-                            float r = 0.5f + psc->arActualResult[0] - psc->arLuck[0][1] + psc->arLuck[1][1];
-
-                            aasz = g_malloc(3 * sizeof(*aasz));
-
-                            aasz[0] = g_strdup(_("Luck based FIBS rating diff."));
-                            aasz[2] = g_strdup("");
-
-                            if (r > 0.0f && r < 1.0f)
-                                aasz[1] = g_strdup_printf("%+7.2f", relativeFibsRating(r, ms.nMatchTo));
-                            else
-                                aasz[1] = g_strdup_printf(_("n/a"));
-
-                            list = g_list_append(list, aasz);
-
-                        }
-
-                    }
-
-                }
-
-                if (psc->fCube || psc->fMoves) {
-
-                    */
-/* error based fibs rating *//*
-
-
-                    if (nMatchTo) {
-
-                        aasz = g_malloc(3 * sizeof(*aasz));
-                        aasz[0] = g_strdup(_("Error based abs. FIBS rating"));
-
-                        for (i = 0; i < 2; ++i)
-                            if (psc->anCloseCube[i] + psc->anUnforcedMoves[i])
-                                aasz[i + 1] = g_strdup_printf("%6.1f",
-                                                              absoluteFibsRating(
-                                                                      aaaar[CHEQUERPLAY][PERMOVE][i][NORMALISED],
-                                                                      aaaar[CUBEDECISION][PERMOVE][i]
-                                                                      [NORMALISED], nMatchTo, rRatingOffset));
-                            else
-                                aasz[i + 1] = g_strdup_printf(_("n/a"));
-
-                        list = g_list_append(list, aasz);
-
-                        */
-/* chequer error fibs rating *//*
-
-
-                        aasz = g_malloc(3 * sizeof(*aasz));
-                        aasz[0] = g_strdup(_("Chequerplay errors rating loss"));
-
-                        for (i = 0; i < 2; ++i)
-                            if (psc->anUnforcedMoves[i])
-                                aasz[i + 1] = g_strdup_printf("%6.1f",
-                                                              absoluteFibsRatingChequer(aaaar[CHEQUERPLAY][PERMOVE][i]
-                                                                                        [NORMALISED], nMatchTo));
-                            else
-                                aasz[i + 1] = g_strdup_printf(_("n/a"));
-
-                        list = g_list_append(list, aasz);
-
-                        */
-/* cube error fibs rating *//*
-
-
-                        aasz = g_malloc(3 * sizeof(*aasz));
-                        aasz[0] = g_strdup(_("Cube errors rating loss"));
-
-                        for (i = 0; i < 2; ++i)
-                            if (psc->anCloseCube[i])
-                                aasz[i + 1] = g_strdup_printf("%6.1f",
-                                                              absoluteFibsRatingCube(aaaar[CUBEDECISION][PERMOVE][i]
-                                                                                     [NORMALISED], nMatchTo));
-                            else
-                                aasz[i + 1] = g_strdup_printf(_("n/a"));
-
-                        list = g_list_append(list, aasz);
-
-                    }
-
-                }
-
-                if (psc->fDice && !nMatchTo && psc->nGames > 1) {
-
-                    static const char *asz[2][2] = {
-                            {N_("Advantage (actual) in ppg"),
-                                    */
-/* xgettext: no-c-format *//*
-
-                                    N_("95% confidence interval (ppg)")},
-                            {N_("Advantage (luck adjusted) in ppg"),
-                                    */
-/* xgettext: no-c-format *//*
-
-                                    N_("95% confidence interval (ppg)")}
-                    };
-                    int i, j;
-                    const float *af[2][2];
-                    af[0][0] = psc->arActualResult;
-                    af[0][1] = psc->arVarianceActual;
-                    af[1][0] = psc->arLuckAdj;
-                    af[1][1] = psc->arVarianceLuckAdj;
-
-                    for (i = 0; i < 2; ++i) {
-
-                        */
-/* ppg *//*
-
-
-                        aasz = g_malloc(3 * sizeof(*aasz));
-                        aasz[0] = g_strdup(gettext(asz[i][0]));
-
-                        for (j = 0; j < 2; ++j)
-                            aasz[j + 1] =
-                                    g_strdup_printf("%+*.*f", fOutputDigits + 3, fOutputDigits,
-                                                    af[i][0][j] / psc->nGames);
-
-                        list = g_list_append(list, aasz);
-
-                        */
-/* std dev. *//*
-
-
-                        aasz = g_malloc(3 * sizeof(*aasz));
-                        aasz[0] = g_strdup(gettext(asz[i][1]));
-
-                        for (j = 0; j < 2; ++j) {
-                            float ci = 1.95996f * sqrtf(af[i][1][j] / psc->nGames);
-                            float max = af[i][0][j] + ci;
-                            float min = af[i][0][j] - ci;
-                            aasz[j + 1] = g_strdup_printf("[%*.*f,%*.*f]",
-                                                          fOutputDigits + 3, fOutputDigits, min,
-                                                          fOutputDigits + 3, fOutputDigits, max);
-                        }
-                        list = g_list_append(list, aasz);
-
-                    }
-
-                }
-                if (list == NULL)
-                    g_free(aasz);
-            }
-
-            break;
-*/
-
-        default:
-
-            g_assert_not_reached();
-            break;
-    }
-}
 
 static void
 BghDumpStatcontext(GString *gsz, const statcontext *psc, int nMatchTo) {
-//    char sz[4096];
+    float aaaar[3][2][2][2];
+    getMWCFromError(psc, aaaar);
 
+    // @see formatGS for all examples
+    // NOTE that gnubg has white/black not black/white as bgh has it
     if (psc->fMoves) {
-        formatGSBgh(gsz, psc, nMatchTo, FORMATGS_CHEQUER);
-        formatGSBgh(gsz, psc, nMatchTo, FORMATGS_CUBE);
-        formatGSBgh(gsz, psc, nMatchTo, FORMATGS_OVERALL);
-        formatGSBgh(gsz, psc, nMatchTo, FORMATGS_LUCK);
+        formatPlay(gsz, psc, aaaar, CHEQUERPLAY);
+        formatPlay(gsz, psc, aaaar, CUBEDECISION);
+        formatPlay(gsz, psc, aaaar, COMBINED);
+
+        g_string_append(gsz, "\n>LK");
+        for (int i = 1; i >= 0; --i) {
+            g_string_append_printf(gsz, ":%+.3f:%+.3f", psc->arLuck[i][0], psc->arLuck[i][1] * 100);
+            g_string_append_printf(gsz, ":%+.3f:%+.3f",
+                                   (float) psc->arLuck[i][0] / (float) psc->anTotalMoves[i] * 1000,
+                                   psc->arLuck[i][1] / (float) psc->anTotalMoves[i] * 100);
+            if (psc->anTotalMoves[i])
+                g_string_append_printf(gsz, ":%s", aszBghLuckRating[getLuckRating(
+                        psc->arLuck[i][0] / (float) psc->anTotalMoves[i])]);
+            else
+                g_string_append(gsz, ":na");
+        }
+
+        g_string_append(gsz, "\n>FB");
+        for (int i = 1; i >= 0; --i) {
+            if (psc->anCloseCube[i] + psc->anUnforcedMoves[i])
+                g_string_append_printf(gsz, ":%.1f", absoluteFibsRating(aaaar[CHEQUERPLAY][PERMOVE][i][NORMALISED],
+                                                                        aaaar[CUBEDECISION][PERMOVE][i][NORMALISED],
+                                                                        nMatchTo, rRatingOffset));
+            else
+                g_string_append(gsz, ":0");
+        }
+
     }
-//    DumpStatcontext(sz, psc, ap[0].szName, ap[1].szName, nMatchTo);
-//        g_string_append(gsz, sz);
     g_string_append(gsz, "\n\n");
 
 }
