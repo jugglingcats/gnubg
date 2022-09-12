@@ -17,3 +17,6 @@ lib
 po
 
 matches
+/.idea/
+\#
+am--include-marker
