@@ -2,42 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="Raspberry (80fcfc84-4abe-4fee-b0a5-9ee1714c8a66)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="Remote Host (9168d4f0-f18c-4cc1-8a4e-1715d3e315ee)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="WSL (2f3c7138-1be1-4992-9350-c9c977d7ba6f)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="WSL (8b91ddb0-e97c-40f4-a9dd-813cd46f4d17)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="WSL (ec2b3774-a4b5-4ca7-8b5d-e419d40bcb5b)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="WSL (ee2b5967-3684-4a49-be12-3b514aae4282)">
+      <paths name="Ubuntu (30d83c7d-5537-4e77-8684-27de6df192a7)">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

@@ -3,1186 +3,132 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="gnubg-1.06.002" targetName="distuninstallcheck" />
-      <config projectName="gnubg-1.06.002" targetName="ABOUT-NLS" />
-      <config projectName="gnubg-1.06.002" targetName="installcheck" />
-      <config projectName="gnubg-1.06.002" targetName="GTAGS" />
-      <config projectName="gnubg-1.06.002" targetName="install-info-am" />
-      <config projectName="gnubg-1.06.002" targetName="ctags-am" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-tags" />
-      <config projectName="gnubg-1.06.002" targetName="uninstall-am" />
-      <config projectName="gnubg-1.06.002" targetName="ps-am" />
-      <config projectName="gnubg-1.06.002" targetName="install-ps" />
-      <config projectName="gnubg-1.06.002" targetName="info-am" />
-      <config projectName="gnubg-1.06.002" targetName="dist-lzip" />
-      <config projectName="gnubg-1.06.002" targetName="maintainer-clean-generic" />
-      <config projectName="gnubg-1.06.002" targetName="tags" />
-      <config projectName="gnubg-1.06.002" targetName="dist-xz" />
-      <config projectName="gnubg-1.06.002" targetName="html-am" />
-      <config projectName="gnubg-1.06.002" targetName="missing" />
-      <config projectName="gnubg-1.06.002" targetName="all" />
-      <config projectName="gnubg-1.06.002" targetName="dist-shar" />
-      <config projectName="gnubg-1.06.002" targetName="stamp-h1" />
-      <config projectName="gnubg-1.06.002" targetName="install-dvi-am" />
-      <config projectName="gnubg-1.06.002" targetName="installdirs-am" />
-      <config projectName="gnubg-1.06.002" targetName="pdf-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="install" />
-      <config projectName="gnubg-1.06.002" targetName="install-exec-am" />
-      <config projectName="gnubg-1.06.002" targetName="dist-tarZ" />
-      <config projectName="gnubg-1.06.002" targetName="TAGS" />
-      <config projectName="gnubg-1.06.002" targetName="maintainer-clean" />
-      <config projectName="gnubg-1.06.002" targetName="install-am" />
-      <config projectName="gnubg-1.06.002" targetName="clean-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="install-html-am" />
-      <config projectName="gnubg-1.06.002" targetName="depcomp" />
-      <config projectName="gnubg-1.06.002" targetName="mostlyclean" />
-      <config projectName="gnubg-1.06.002" targetName="makebearoff" />
-      <config projectName="gnubg-1.06.002" targetName="dvi-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="tags-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="CTAGS" />
-      <config projectName="gnubg-1.06.002" targetName="dist-gzip" />
-      <config projectName="gnubg-1.06.002" targetName="install-html-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="install-pdf" />
-      <config projectName="gnubg-1.06.002" targetName="dist-bzip2" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-hdr" />
-      <config projectName="gnubg-1.06.002" targetName="clean-libtool" />
-      <config projectName="gnubg-1.06.002" targetName="check-am" />
-      <config projectName="gnubg-1.06.002" targetName="html-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="clean-cscope" />
-      <config projectName="gnubg-1.06.002" targetName="install-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="clean-binPROGRAMS" />
-      <config projectName="gnubg-1.06.002" targetName="install-data-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="install-info-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="ChangeLog" />
-      <config projectName="gnubg-1.06.002" targetName="AUTHORS" />
-      <config projectName="gnubg-1.06.002" targetName="mostlyclean-am" />
-      <config projectName="gnubg-1.06.002" targetName="dist-zip" />
-      <config projectName="gnubg-1.06.002" targetName="install-sh" />
-      <config projectName="gnubg-1.06.002" targetName="cscopelist-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="installcheck-am" />
-      <config projectName="gnubg-1.06.002" targetName="installdirs" />
-      <config projectName="gnubg-1.06.002" targetName="TODO" />
-      <config projectName="gnubg-1.06.002" targetName="uninstall-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="README" />
-      <config projectName="gnubg-1.06.002" targetName="all-am" />
-      <config projectName="gnubg-1.06.002" targetName="ylwrap" />
-      <config projectName="gnubg-1.06.002" targetName="distclean" />
-      <config projectName="gnubg-1.06.002" targetName="install-binPROGRAMS" />
-      <config projectName="gnubg-1.06.002" targetName="all-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="mostlyclean-generic" />
-      <config projectName="gnubg-1.06.002" targetName="bearoffdump" />
-      <config projectName="gnubg-1.06.002" targetName="makehyper" />
-      <config projectName="gnubg-1.06.002" targetName="info-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-generic" />
-      <config projectName="gnubg-1.06.002" targetName="gnubg" />
-      <config projectName="gnubg-1.06.002" targetName="install-dvi" />
-      <config projectName="gnubg-1.06.002" targetName="install-ps-am" />
-      <config projectName="gnubg-1.06.002" targetName="ctags" />
-      <config projectName="gnubg-1.06.002" targetName="uninstall" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-compile" />
-      <config projectName="gnubg-1.06.002" targetName="Makefile" />
-      <config projectName="gnubg-1.06.002" targetName="check" />
-      <config projectName="gnubg-1.06.002" targetName="maintainer-clean-am" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="cscope" />
-      <config projectName="gnubg-1.06.002" targetName="cscopelist-am" />
-      <config projectName="gnubg-1.06.002" targetName="am--refresh" />
-      <config projectName="gnubg-1.06.002" targetName="mostlyclean-compile" />
-      <config projectName="gnubg-1.06.002" targetName="makeweights" />
-      <config projectName="gnubg-1.06.002" targetName="uninstall-pkgdataDATA" />
-      <config projectName="gnubg-1.06.002" targetName="clean-am" />
-      <config projectName="gnubg-1.06.002" targetName="pdf-am" />
-      <config projectName="gnubg-1.06.002" targetName="clean-generic" />
-      <config projectName="gnubg-1.06.002" targetName="install-data-am" />
-      <config projectName="gnubg-1.06.002" targetName="ps-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="uninstall-binPROGRAMS" />
-      <config projectName="gnubg-1.06.002" targetName="distcheck" />
-      <config projectName="gnubg-1.06.002" targetName="install-ps-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="ctags-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="ps" />
-      <config projectName="gnubg-1.06.002" targetName="install-exec-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="installdirs-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="maintainer-clean-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="INSTALL" />
-      <config projectName="gnubg-1.06.002" targetName="distcleancheck" />
-      <config projectName="gnubg-1.06.002" targetName="COPYING" />
-      <config projectName="gnubg-1.06.002" targetName="distdir" />
-      <config projectName="gnubg-1.06.002" targetName="install-exec" />
-      <config projectName="gnubg-1.06.002" targetName="install-info" />
-      <config projectName="gnubg-1.06.002" targetName="install-man" />
-      <config projectName="gnubg-1.06.002" targetName="install-html" />
-      <config projectName="gnubg-1.06.002" targetName="dvi" />
-      <config projectName="gnubg-1.06.002" targetName="install-data" />
-      <config projectName="gnubg-1.06.002" targetName="dist" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-am" />
-      <config projectName="gnubg-1.06.002" targetName="compile" />
-      <config projectName="gnubg-1.06.002" targetName="ID" />
-      <config projectName="gnubg-1.06.002" targetName="info" />
-      <config projectName="gnubg-1.06.002" targetName="install-strip" />
-      <config projectName="gnubg-1.06.002" targetName="mkinstalldirs" />
-      <config projectName="gnubg-1.06.002" targetName="html" />
-      <config projectName="gnubg-1.06.002" targetName="cscopelist" />
-      <config projectName="gnubg-1.06.002" targetName="distclean-libtool" />
-      <config projectName="gnubg-1.06.002" targetName="tags-am" />
-      <config projectName="gnubg-1.06.002" targetName="dist-all" />
-      <config projectName="gnubg-1.06.002" targetName="mostlyclean-libtool" />
-      <config projectName="gnubg-1.06.002" targetName="install-dvi-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="pdf" />
-      <config projectName="gnubg-1.06.002" targetName="configure" />
-      <config projectName="gnubg-1.06.002" targetName="NEWS" />
-      <config projectName="gnubg-1.06.002" targetName="dvi-am" />
-      <config projectName="gnubg-1.06.002" targetName="install-pdf-am" />
-      <config projectName="gnubg-1.06.002" targetName="install-pkgdataDATA" />
-      <config projectName="gnubg-1.06.002" targetName="install-pdf-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="check-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="mostlyclean-recursive" />
-      <config projectName="gnubg-1.06.002" targetName="installcheck-recursive" />
-    </generated>
-  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4542e753-6fe8-4ae9-aef0-c3ddad16bef1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" afterDir="false" />
+    <list default="true" id="0d2d70a6-634c-4d8c-9ba4-35122e3203fb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scopes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aclocal.m4" beforeDir="false" afterPath="$PROJECT_DIR$/aclocal.m4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bgh.c" beforeDir="false" afterPath="$PROJECT_DIR$/bgh.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credits.c" beforeDir="false" afterPath="$PROJECT_DIR$/credits.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/external_l.c" beforeDir="false" afterPath="$PROJECT_DIR$/external_l.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/board3d/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/board3d/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.h.in" beforeDir="false" afterPath="$PROJECT_DIR$/config.h.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configure" beforeDir="false" afterPath="$PROJECT_DIR$/configure" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Makefile.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/external_y.c" beforeDir="false" afterPath="$PROJECT_DIR$/external_y.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/external_y.h" beforeDir="false" afterPath="$PROJECT_DIR$/external_y.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sgf_l.c" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_l.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flags/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/flags/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/format.c" beforeDir="false" afterPath="$PROJECT_DIR$/format.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install-sh" beforeDir="false" afterPath="$PROJECT_DIR$/install-sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m4/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/m4/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/met/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/met/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkinstalldirs" beforeDir="false" afterPath="$PROJECT_DIR$/mkinstalldirs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/non-src/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/non-src/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pixmaps/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/pixmaps/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Makefile.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sgf_y.c" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_y.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sgf_y.h" beforeDir="false" afterPath="$PROJECT_DIR$/sgf_y.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/sounds/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/textures/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/textures/Makefile.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/win32/Makefile.in" beforeDir="false" afterPath="$PROJECT_DIR$/win32/Makefile.in" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
-  </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/README" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/backgammon.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bgh.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/format.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/gnubg.c" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/matches/full_match.sgf" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/matches/match.bgh" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/matches/script.sh" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MakefileLocalSettings">
-    <option name="availableProjects">
-      <map>
-        <entry>
-          <key>
-            <ExternalProjectPojo>
-              <option name="name" value="gnubg-1.06.002" />
-              <option name="path" value="$PROJECT_DIR$" />
-            </ExternalProjectPojo>
-          </key>
-          <value>
-            <list>
-              <ExternalProjectPojo>
-                <option name="name" value="gnubg-1.06.002" />
-                <option name="path" value="D:\alfie\projects\gnubg-1.06.002" />
-              </ExternalProjectPojo>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="projectSyncType">
       <map>
         <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
     </option>
   </component>
-  <component name="NamedScopeManager">
-    <order>
-      <scope name="Disable header file formatting" />
-    </order>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="1nfC6HnRn5sSKjyysZ9aQUKMHU3" />
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2022" />
+    <option name="minorVersion" value="1.3" />
+  </component>
+  <component name="ProjectId" id="2CnRqWPWuyHY8ZY8erJAln7qfQe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/matches" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu-22.04/home/alfie/gnubg/matches",
+    "structure.view.defaults.are.configured": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\alfie\projects\gnubg-1.06.002\matches" />
-      <recent name="D:\alfie\projects\gnubg-1.06.002" />
+      <recent name="\\wsl$\Ubuntu-22.04\home\alfie\gnubg\matches" />
     </key>
-  </component>
-  <component name="RunManager" selected="Makefile Application.read and export">
-    <configuration name="ABOUT-NLS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ABOUT-NLS" CONFIG_NAME="ABOUT-NLS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AUTHORS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="AUTHORS" CONFIG_NAME="AUTHORS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="COPYING" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="COPYING" CONFIG_NAME="COPYING" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CTAGS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="CTAGS" CONFIG_NAME="CTAGS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChangeLog" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ChangeLog" CONFIG_NAME="ChangeLog" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GTAGS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="GTAGS" CONFIG_NAME="GTAGS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ID" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ID" CONFIG_NAME="ID" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="INSTALL" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="INSTALL" CONFIG_NAME="INSTALL" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Makefile" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="Makefile" CONFIG_NAME="Makefile" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NEWS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="NEWS" CONFIG_NAME="NEWS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="README" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="README" CONFIG_NAME="README" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TAGS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="TAGS" CONFIG_NAME="TAGS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TODO" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="TODO" CONFIG_NAME="TODO" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="all-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="all-am" CONFIG_NAME="all-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="all-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="all-recursive" CONFIG_NAME="all-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="-c matches/script.txt" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="/mnt/d/alfie/projects/gnubg-1.06.002/gnubg">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="am--refresh" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="am--refresh" CONFIG_NAME="am--refresh" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="bearoffdump" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="bearoffdump" CONFIG_NAME="bearoffdump" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="check-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="check-am" CONFIG_NAME="check-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="check-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="check-recursive" CONFIG_NAME="check-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="check" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="check" CONFIG_NAME="check" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="clean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="clean-am" CONFIG_NAME="clean-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="clean-binPROGRAMS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="clean-binPROGRAMS" CONFIG_NAME="clean-binPROGRAMS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="clean-cscope" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="clean-cscope" CONFIG_NAME="clean-cscope" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="clean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="clean-generic" CONFIG_NAME="clean-generic" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="clean-libtool" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="clean-libtool" CONFIG_NAME="clean-libtool" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="clean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="clean-recursive" CONFIG_NAME="clean-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="compile" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="compile" CONFIG_NAME="compile" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="configure" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="configure" CONFIG_NAME="configure" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="cscope" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="cscope" CONFIG_NAME="cscope" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="cscopelist-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="cscopelist-am" CONFIG_NAME="cscopelist-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="cscopelist-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="cscopelist-recursive" CONFIG_NAME="cscopelist-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="cscopelist" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="cscopelist" CONFIG_NAME="cscopelist" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ctags-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ctags-am" CONFIG_NAME="ctags-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ctags-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ctags-recursive" CONFIG_NAME="ctags-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ctags" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ctags" CONFIG_NAME="ctags" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="depcomp" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="depcomp" CONFIG_NAME="depcomp" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-all" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-all" CONFIG_NAME="dist-all" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-bzip2" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-bzip2" CONFIG_NAME="dist-bzip2" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-gzip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-gzip" CONFIG_NAME="dist-gzip" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-lzip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-lzip" CONFIG_NAME="dist-lzip" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-shar" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-shar" CONFIG_NAME="dist-shar" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-tarZ" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-tarZ" CONFIG_NAME="dist-tarZ" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-xz" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-xz" CONFIG_NAME="dist-xz" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist-zip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist-zip" CONFIG_NAME="dist-zip" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dist" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dist" CONFIG_NAME="dist" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distcheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distcheck" CONFIG_NAME="distcheck" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-am" CONFIG_NAME="distclean-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-compile" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-compile" CONFIG_NAME="distclean-compile" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-generic" CONFIG_NAME="distclean-generic" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-hdr" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-hdr" CONFIG_NAME="distclean-hdr" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-libtool" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-libtool" CONFIG_NAME="distclean-libtool" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-recursive" CONFIG_NAME="distclean-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean-tags" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean-tags" CONFIG_NAME="distclean-tags" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distclean" CONFIG_NAME="distclean" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distcleancheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distcleancheck" CONFIG_NAME="distcleancheck" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distdir" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distdir" CONFIG_NAME="distdir" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="distuninstallcheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="distuninstallcheck" CONFIG_NAME="distuninstallcheck" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dvi-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dvi-am" CONFIG_NAME="dvi-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dvi-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dvi-recursive" CONFIG_NAME="dvi-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dvi" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="dvi" CONFIG_NAME="dvi" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gnubg cli" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="/mnt/d/alfie/projects/gnubg-1.06.002/gnubg">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gnubg" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="gnubg" CONFIG_NAME="gnubg" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="html-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="html-am" CONFIG_NAME="html-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="html-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="html-recursive" CONFIG_NAME="html-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="html" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="html" CONFIG_NAME="html" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="info-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="info-am" CONFIG_NAME="info-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="info-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="info-recursive" CONFIG_NAME="info-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="info" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="info" CONFIG_NAME="info" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-am" CONFIG_NAME="install-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-binPROGRAMS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-binPROGRAMS" CONFIG_NAME="install-binPROGRAMS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-data-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-data-am" CONFIG_NAME="install-data-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-data-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-data-recursive" CONFIG_NAME="install-data-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-data" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-data" CONFIG_NAME="install-data" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-dvi-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-dvi-am" CONFIG_NAME="install-dvi-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-dvi-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-dvi-recursive" CONFIG_NAME="install-dvi-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-dvi" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-dvi" CONFIG_NAME="install-dvi" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-exec-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-exec-am" CONFIG_NAME="install-exec-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-exec-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-exec-recursive" CONFIG_NAME="install-exec-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-exec" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-exec" CONFIG_NAME="install-exec" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-html-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-html-am" CONFIG_NAME="install-html-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-html-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-html-recursive" CONFIG_NAME="install-html-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-html" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-html" CONFIG_NAME="install-html" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-info-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-info-am" CONFIG_NAME="install-info-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-info-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-info-recursive" CONFIG_NAME="install-info-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-info" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-info" CONFIG_NAME="install-info" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-man" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-man" CONFIG_NAME="install-man" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-pdf-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-pdf-am" CONFIG_NAME="install-pdf-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-pdf-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-pdf-recursive" CONFIG_NAME="install-pdf-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-pdf" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-pdf" CONFIG_NAME="install-pdf" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-pkgdataDATA" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-pkgdataDATA" CONFIG_NAME="install-pkgdataDATA" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-ps-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-ps-am" CONFIG_NAME="install-ps-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-ps-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-ps-recursive" CONFIG_NAME="install-ps-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-ps" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-ps" CONFIG_NAME="install-ps" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-recursive" CONFIG_NAME="install-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-sh" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-sh" CONFIG_NAME="install-sh" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install-strip" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install-strip" CONFIG_NAME="install-strip" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="install" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="install" CONFIG_NAME="install" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="installcheck-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="installcheck-am" CONFIG_NAME="installcheck-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="installcheck-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="installcheck-recursive" CONFIG_NAME="installcheck-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="installcheck" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="installcheck" CONFIG_NAME="installcheck" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="installdirs-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="installdirs-am" CONFIG_NAME="installdirs-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="installdirs-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="installdirs-recursive" CONFIG_NAME="installdirs-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="installdirs" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="installdirs" CONFIG_NAME="installdirs" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="maintainer-clean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="maintainer-clean-am" CONFIG_NAME="maintainer-clean-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="maintainer-clean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="maintainer-clean-generic" CONFIG_NAME="maintainer-clean-generic" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="maintainer-clean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="maintainer-clean-recursive" CONFIG_NAME="maintainer-clean-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="maintainer-clean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="maintainer-clean" CONFIG_NAME="maintainer-clean" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="makebearoff" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="makebearoff" CONFIG_NAME="makebearoff" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="makehyper" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="makehyper" CONFIG_NAME="makehyper" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="makeweights" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="makeweights" CONFIG_NAME="makeweights" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="missing" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="missing" CONFIG_NAME="missing" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mkinstalldirs" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mkinstalldirs" CONFIG_NAME="mkinstalldirs" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mostlyclean-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mostlyclean-am" CONFIG_NAME="mostlyclean-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mostlyclean-compile" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mostlyclean-compile" CONFIG_NAME="mostlyclean-compile" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mostlyclean-generic" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mostlyclean-generic" CONFIG_NAME="mostlyclean-generic" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mostlyclean-libtool" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mostlyclean-libtool" CONFIG_NAME="mostlyclean-libtool" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mostlyclean-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mostlyclean-recursive" CONFIG_NAME="mostlyclean-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mostlyclean" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="mostlyclean" CONFIG_NAME="mostlyclean" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="pdf-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="pdf-am" CONFIG_NAME="pdf-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="pdf-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="pdf-recursive" CONFIG_NAME="pdf-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="pdf" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="pdf" CONFIG_NAME="pdf" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ps-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ps-am" CONFIG_NAME="ps-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ps-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ps-recursive" CONFIG_NAME="ps-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ps" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ps" CONFIG_NAME="ps" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="read and export" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="-c matches/script.txt" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="/mnt/d/alfie/projects/gnubg-1.06.002/gnubg">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="stamp-h1" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="stamp-h1" CONFIG_NAME="stamp-h1" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="tags-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="tags-am" CONFIG_NAME="tags-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="tags-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="tags-recursive" CONFIG_NAME="tags-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="tags" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="tags" CONFIG_NAME="tags" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="uninstall-am" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="uninstall-am" CONFIG_NAME="uninstall-am" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="uninstall-binPROGRAMS" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="uninstall-binPROGRAMS" CONFIG_NAME="uninstall-binPROGRAMS" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="uninstall-pkgdataDATA" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="uninstall-pkgdataDATA" CONFIG_NAME="uninstall-pkgdataDATA" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="uninstall-recursive" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="uninstall-recursive" CONFIG_NAME="uninstall-recursive" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="uninstall" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="uninstall" CONFIG_NAME="uninstall" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ylwrap" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnubg-1.06.002" TARGET_NAME="ylwrap" CONFIG_NAME="ylwrap" version="1">
-      <method v="2">
-        <option name="CLION.COMPOUND.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Docker Image (1)" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
-      <deployment type="docker-image">
-        <settings>
-          <option name="imageTag" value="e50c909a8df2" />
-          <option name="command" value="" />
-          <option name="containerName" value="gnubg" />
-          <option name="entrypoint" value="" />
-          <option name="commandLineOptions" value="" />
-          <option name="volumeBindings">
-            <list>
-              <DockerVolumeBindingImpl>
-                <option name="containerPath" value="/build" />
-                <option name="hostPath" value="D:\alfie\projects\gnubg-1.06.002" />
-              </DockerVolumeBindingImpl>
-            </list>
-          </option>
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
-      <deployment type="docker-image">
-        <settings>
-          <option name="imageTag" value="e50c909a8df2" />
-          <option name="command" value="" />
-          <option name="containerName" value="" />
-          <option name="entrypoint" value="" />
-          <option name="commandLineOptions" value="" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="" />
-          <option name="buildCliOptions" value="" />
-          <option name="buildOnly" value="true" />
-          <option name="command" value="" />
-          <option name="containerName" value="" />
-          <option name="entrypoint" value="" />
-          <option name="commandLineOptions" value="" />
-          <option name="sourceFilePath" value="Dockerfile" />
-          <option name="volumeBindings">
-            <list>
-              <DockerVolumeBindingImpl>
-                <option name="containerPath" value="build" />
-                <option name="hostPath" value="D:\alfie\projects\gnubg-1.06.002" />
-              </DockerVolumeBindingImpl>
-            </list>
-          </option>
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Docker.Dockerfile" />
-      <item itemvalue="Docker.Docker Image" />
-      <item itemvalue="Docker.Docker Image (1)" />
-      <item itemvalue="Makefile Application.gnubg cli" />
-      <item itemvalue="Makefile Application.read and export" />
-      <item itemvalue="Makefile Application.all" />
-      <item itemvalue="Makefile Application.all-am" />
-      <item itemvalue="Makefile Application.all-recursive" />
-      <item itemvalue="Makefile Application.am--refresh" />
-      <item itemvalue="Makefile Application.check" />
-      <item itemvalue="Makefile Application.check-am" />
-      <item itemvalue="Makefile Application.check-recursive" />
-      <item itemvalue="Makefile Application.clean-binPROGRAMS" />
-      <item itemvalue="Makefile Application.clean-cscope" />
-      <item itemvalue="Makefile Application.clean-generic" />
-      <item itemvalue="Makefile Application.clean-libtool" />
-      <item itemvalue="Makefile Application.clean-recursive" />
-      <item itemvalue="Makefile Application.cscope" />
-      <item itemvalue="Makefile Application.cscopelist-am" />
-      <item itemvalue="Makefile Application.cscopelist-recursive" />
-      <item itemvalue="Makefile Application.CTAGS" />
-      <item itemvalue="Makefile Application.ctags" />
-      <item itemvalue="Makefile Application.ctags-am" />
-      <item itemvalue="Makefile Application.ctags-recursive" />
-      <item itemvalue="Makefile Application.dist" />
-      <item itemvalue="Makefile Application.dist-all" />
-      <item itemvalue="Makefile Application.dist-bzip2" />
-      <item itemvalue="Makefile Application.dist-gzip" />
-      <item itemvalue="Makefile Application.dist-lzip" />
-      <item itemvalue="Makefile Application.dist-shar" />
-      <item itemvalue="Makefile Application.dist-tarZ" />
-      <item itemvalue="Makefile Application.dist-xz" />
-      <item itemvalue="Makefile Application.dist-zip" />
-      <item itemvalue="Makefile Application.distcheck" />
-      <item itemvalue="Makefile Application.distclean" />
-      <item itemvalue="Makefile Application.distclean-compile" />
-      <item itemvalue="Makefile Application.distclean-generic" />
-      <item itemvalue="Makefile Application.distclean-hdr" />
-      <item itemvalue="Makefile Application.distclean-libtool" />
-      <item itemvalue="Makefile Application.distclean-recursive" />
-      <item itemvalue="Makefile Application.distclean-tags" />
-      <item itemvalue="Makefile Application.distcleancheck" />
-      <item itemvalue="Makefile Application.distdir" />
-      <item itemvalue="Makefile Application.distuninstallcheck" />
-      <item itemvalue="Makefile Application.dvi" />
-      <item itemvalue="Makefile Application.dvi-am" />
-      <item itemvalue="Makefile Application.dvi-recursive" />
-      <item itemvalue="Makefile Application.GTAGS" />
-      <item itemvalue="Makefile Application.html" />
-      <item itemvalue="Makefile Application.html-am" />
-      <item itemvalue="Makefile Application.html-recursive" />
-      <item itemvalue="Makefile Application.info" />
-      <item itemvalue="Makefile Application.info-am" />
-      <item itemvalue="Makefile Application.info-recursive" />
-      <item itemvalue="Makefile Application.install" />
-      <item itemvalue="Makefile Application.install-am" />
-      <item itemvalue="Makefile Application.install-binPROGRAMS" />
-      <item itemvalue="Makefile Application.install-data" />
-      <item itemvalue="Makefile Application.install-data-am" />
-      <item itemvalue="Makefile Application.install-data-recursive" />
-      <item itemvalue="Makefile Application.install-dvi" />
-      <item itemvalue="Makefile Application.install-dvi-am" />
-      <item itemvalue="Makefile Application.install-dvi-recursive" />
-      <item itemvalue="Makefile Application.install-exec" />
-      <item itemvalue="Makefile Application.install-exec-am" />
-      <item itemvalue="Makefile Application.install-exec-recursive" />
-      <item itemvalue="Makefile Application.install-html" />
-      <item itemvalue="Makefile Application.install-html-am" />
-      <item itemvalue="Makefile Application.install-html-recursive" />
-      <item itemvalue="Makefile Application.install-info" />
-      <item itemvalue="Makefile Application.install-info-am" />
-      <item itemvalue="Makefile Application.install-info-recursive" />
-      <item itemvalue="Makefile Application.install-man" />
-      <item itemvalue="Makefile Application.install-pdf" />
-      <item itemvalue="Makefile Application.install-pdf-am" />
-      <item itemvalue="Makefile Application.install-pdf-recursive" />
-      <item itemvalue="Makefile Application.install-pkgdataDATA" />
-      <item itemvalue="Makefile Application.install-ps" />
-      <item itemvalue="Makefile Application.install-ps-am" />
-      <item itemvalue="Makefile Application.install-ps-recursive" />
-      <item itemvalue="Makefile Application.install-recursive" />
-      <item itemvalue="Makefile Application.install-strip" />
-      <item itemvalue="Makefile Application.installcheck" />
-      <item itemvalue="Makefile Application.installcheck-am" />
-      <item itemvalue="Makefile Application.installcheck-recursive" />
-      <item itemvalue="Makefile Application.installdirs" />
-      <item itemvalue="Makefile Application.installdirs-am" />
-      <item itemvalue="Makefile Application.installdirs-recursive" />
-      <item itemvalue="Makefile Application.maintainer-clean" />
-      <item itemvalue="Makefile Application.maintainer-clean-generic" />
-      <item itemvalue="Makefile Application.maintainer-clean-recursive" />
-      <item itemvalue="Makefile Application.mostlyclean" />
-      <item itemvalue="Makefile Application.mostlyclean-compile" />
-      <item itemvalue="Makefile Application.mostlyclean-generic" />
-      <item itemvalue="Makefile Application.mostlyclean-libtool" />
-      <item itemvalue="Makefile Application.mostlyclean-recursive" />
-      <item itemvalue="Makefile Application.pdf" />
-      <item itemvalue="Makefile Application.pdf-am" />
-      <item itemvalue="Makefile Application.pdf-recursive" />
-      <item itemvalue="Makefile Application.ps" />
-      <item itemvalue="Makefile Application.ps-am" />
-      <item itemvalue="Makefile Application.ps-recursive" />
-      <item itemvalue="Makefile Application.TAGS" />
-      <item itemvalue="Makefile Application.tags" />
-      <item itemvalue="Makefile Application.tags-am" />
-      <item itemvalue="Makefile Application.tags-recursive" />
-      <item itemvalue="Makefile Application.uninstall" />
-      <item itemvalue="Makefile Application.uninstall-am" />
-      <item itemvalue="Makefile Application.uninstall-binPROGRAMS" />
-      <item itemvalue="Makefile Application.uninstall-pkgdataDATA" />
-      <item itemvalue="Makefile Application.uninstall-recursive" />
-      <item itemvalue="Makefile Application.ABOUT-NLS" />
-      <item itemvalue="Makefile Application.AUTHORS" />
-      <item itemvalue="Makefile Application.bearoffdump" />
-      <item itemvalue="Makefile Application.ChangeLog" />
-      <item itemvalue="Makefile Application.clean-am" />
-      <item itemvalue="Makefile Application.compile" />
-      <item itemvalue="Makefile Application.configure" />
-      <item itemvalue="Makefile Application.COPYING" />
-      <item itemvalue="Makefile Application.cscopelist" />
-      <item itemvalue="Makefile Application.depcomp" />
-      <item itemvalue="Makefile Application.distclean-am" />
-      <item itemvalue="Makefile Application.gnubg" />
-      <item itemvalue="Makefile Application.ID" />
-      <item itemvalue="Makefile Application.INSTALL" />
-      <item itemvalue="Makefile Application.install-sh" />
-      <item itemvalue="Makefile Application.maintainer-clean-am" />
-      <item itemvalue="Makefile Application.makebearoff" />
-      <item itemvalue="Makefile Application.Makefile" />
-      <item itemvalue="Makefile Application.makehyper" />
-      <item itemvalue="Makefile Application.makeweights" />
-      <item itemvalue="Makefile Application.missing" />
-      <item itemvalue="Makefile Application.mkinstalldirs" />
-      <item itemvalue="Makefile Application.mostlyclean-am" />
-      <item itemvalue="Makefile Application.NEWS" />
-      <item itemvalue="Makefile Application.README" />
-      <item itemvalue="Makefile Application.stamp-h1" />
-      <item itemvalue="Makefile Application.TODO" />
-      <item itemvalue="Makefile Application.ylwrap" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.Docker Image (1)" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.Docker Image" />
-      </list>
-    </recent_temporary>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-22.04\home\alfie\gnubg\matches" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4542e753-6fe8-4ae9-aef0-c3ddad16bef1" name="Default Changelist" comment="" />
-      <created>1611771580639</created>
+      <changelist id="0d2d70a6-634c-4d8c-9ba4-35122e3203fb" name="Changes" comment="" />
+      <created>1659436553646</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1611771580639</updated>
-      <workItem from="1611771581812" duration="32765000" />
-      <workItem from="1611919253339" duration="8000" />
-      <workItem from="1611934489730" duration="19627000" />
-      <workItem from="1612215833832" duration="3353000" />
-      <workItem from="1612279386681" duration="40000" />
-      <workItem from="1612279746329" duration="2377000" />
+      <updated>1659436553646</updated>
+      <workItem from="1659436555002" duration="1761000" />
+      <workItem from="1659519795740" duration="65000" />
+      <workItem from="1659519934449" duration="3960000" />
+      <workItem from="1659800380170" duration="346000" />
+      <workItem from="1659800821535" duration="1084000" />
+      <workItem from="1659888223537" duration="1007000" />
+      <workItem from="1659890194376" duration="4896000" />
     </task>
-    <task id="LOCAL-00001" summary="Added bgh file export without any change">
-      <created>1611786063610</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1611786063610</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Changes">
-      <created>1612130725109</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1612130725109</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Changes">
-      <created>1612131150779</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1612131150779</updated>
-    </task>
-    <task id="LOCAL-00004" summary="chmod">
-      <created>1612133726343</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1612133726343</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added bgh file export without any change" />
-    <MESSAGE value="Changes" />
-    <MESSAGE value="chmod" />
-    <option name="LAST_COMMIT_MESSAGE" value="chmod" />
   </component>
 </project>

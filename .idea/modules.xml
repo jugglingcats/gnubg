@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" filepath="$PROJECT_DIR$/.idea/gnubg-1.06.002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gnubg.iml" filepath="$PROJECT_DIR$/.idea/gnubg.iml" />
     </modules>
   </component>
 </project>
