@@ -1,3 +1,18 @@
+This code is forked from the main GNUBG code. The changes are for a custom
+export format for use on www.backgammonhub.com.
+
+To output a file in the new format, use the following:
+
+    gnubg -q -c script.txt
+
+Where script.txt contains commands such as:
+
+    load match match.sgf
+    analyse match
+    set export moves number 20
+    export match bgh match.bgh
+
+
 GNU Backgammon version 1.00.0
 
 GNU Backgammon is developed under the GNU General Public License (GPL)
