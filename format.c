@@ -419,7 +419,7 @@ OutputEquity(const float r, const cubeinfo * pci, const int f)
         if (f)
             sprintf(sz, "%+*.*f", fOutputDigits + 3, fOutputDigits, r);
         else
-            sprintf(sz, "% *.*f", fOutputDigits + 2, fOutputDigits, r);
+            sprintf(sz, "%*.*f", fOutputDigits + 2, fOutputDigits, r);
     } else {
         if (fOutputMatchPC) {
             sprintf(sz, "%*.*f%%", fOutputDigits + 3, fOutputDigits > 1 ? fOutputDigits - 1 : 0,

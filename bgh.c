@@ -113,7 +113,7 @@ BghMoveIntro(GString *gsz, const matchstate *pms, const int UNUSED(iGame), const
 extern void
 BghPrologue(GString *gsz, const matchstate *pms, const int UNUSED(iGame)) {
 
-    g_string_append_printf(gsz, "\n\n%d:%d:%d\n", pms->cGames, pms->anScore[0], pms->anScore[1]);
+    g_string_append_printf(gsz, "\n\n%d:%d:%d:%d\n", pms->cGames, pms->anScore[0], pms->anScore[1], pms->bgv);
 //    g_string_append_printf(gsz, pms->cGames == 1 ?
 //                                _("The score (after %d game) is: %s %d, %s %d") :
 //                                _("The score (after %d games) is: %s %d, %s %d"),
@@ -192,23 +192,24 @@ OutputCubeAnalysisBgh(float aarOutput[2][NUM_ROLLOUT_OUTPUTS],
     getCubeDecisionOrdering(ai, arDouble, aarOutput, pci);
 
     for (i = 0; i < 3; i++) {
-        sprintf(strchr(sz, 0), ":"/*, gettext(aszCube[ai[i]])*/);
+//        sprintf(strchr(sz, 0), ":"/*, gettext(aszCube[ai[i]])*/);
 
-        strcat(sz, OutputEquity(arDouble[ai[i]], pci, TRUE));
-
-        if (i)
-            sprintf(strchr(sz, 0), ":%s", OutputEquityDiff(arDouble[ai[i]], arDouble[OUTPUT_OPTIMAL], pci));
-//        strcat(sz, "\n");
+        double eq = arDouble[ai[i]];
+        double mwc = eq2mwc(eq, pci);
+        double mwc_diff = mwc - eq2mwc(arDouble[OUTPUT_OPTIMAL], pci);
+//        strcat(sz, );
+        sprintf(strchr(sz, 0), ":\n  %d %s %s %.4f %.4f", ai[i], OutputEquity(eq, pci, TRUE),
+                OutputEquityDiff(eq, arDouble[OUTPUT_OPTIMAL], pci), mwc, mwc_diff);
     }
 
     /* cube decision */
 
     cd = FindBestCubeDecision(arDouble, aarOutput, pci);
 
-    sprintf(strchr(sz, 0), ":%s", GetCubeRecommendation(cd));
+    sprintf(strchr(sz, 0), ":\n  %s", GetCubeRecommendation(cd));
 
     if ((r = getPercent(cd, arDouble)) >= 0.0)
-        sprintf(strchr(sz, 0), " (%.1f%%)", 100.0f * r);
+        sprintf(strchr(sz, 0), " (%.3f)", 100.0f * r);
 
     return sz;
 }
@@ -240,17 +241,17 @@ OutputCubeAnalysisFullBgh(float aarOutput[2][NUM_ROLLOUT_OUTPUTS],
 
     FindCubeDecision(arDouble, aarOutput, pci);
 
-    fMissed = fDouble > -1 && isMissedDouble(arDouble, aarOutput, fDouble, pci);
-
-    if (fMissed) {
-        fAnno = TRUE;
-
-        sprintf(strchr(sz, 0), "missed_double:%s:%s",
-                aszBghSkillType[stDouble],
-                OutputEquityDiff(arDouble[OUTPUT_NODOUBLE],
-                                 (arDouble[OUTPUT_TAKE] >
-                                  arDouble[OUTPUT_DROP]) ? arDouble[OUTPUT_DROP] : arDouble[OUTPUT_TAKE], pci));
-    }
+//    fMissed = fDouble > -1 && isMissedDouble(arDouble, aarOutput, fDouble, pci);
+//
+//    if (fMissed) {
+//        fAnno = TRUE;
+//
+//        sprintf(strchr(sz, 0), "missed_double:%s:%s",
+//                aszBghSkillType[stDouble],
+//                OutputEquityDiff(arDouble[OUTPUT_NODOUBLE],
+//                                 (arDouble[OUTPUT_TAKE] >
+//                                  arDouble[OUTPUT_DROP]) ? arDouble[OUTPUT_DROP] : arDouble[OUTPUT_TAKE], pci));
+//    }
 
     r = arDouble[OUTPUT_TAKE] - arDouble[OUTPUT_DROP];
 
@@ -444,8 +445,6 @@ BghPrintCubeAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
 
 static void
 BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
-
-//    char szBuf[1024];
     char sz[64];
     unsigned int i;
 
@@ -453,26 +452,23 @@ BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
 
     GetMatchStateCubeInfo(&ci, pms);
 
-    /* check if move should be printed */
-
-    if (!exsExport.afMovesDisplay[pmr->n.stMove])
-        return;
-
-    g_string_append_printf(gsz, ":%s:%s", aszBghLuckRating[pmr->lt], GetLuckAnalysis(pms, pmr->rLuck));
+    g_string_append_printf(gsz, ":%s", aszBghLuckRating[pmr->lt]);
+    g_string_append_printf(gsz, ":%0.3f", pmr->rLuck);
+    g_string_append_printf(gsz, ":%0.3f", 100.0f * (eq2mwc(pmr->rLuck, &ci) - eq2mwc(0.0f, &ci)));
 
     if (pmr->ml.cMoves > 0) {
         g_string_append_printf(gsz, ":%s", aszBghSkillType[pmr->n.stMove]);
 
-        if (!pms->nMatchTo || !fOutputMWC)
-            g_string_append_printf(gsz, ":%+.3f",
-                                   pmr->ml.amMoves[pmr->n.iMove].rScore - pmr->ml.amMoves[0].rScore);
-        else
-            g_string_append_printf(gsz, ":%+.3f%%",
-                                   100.0f *
-                                   eq2mwc(pmr->ml.amMoves[pmr->n.iMove].rScore, &ci) -
-                                   100.0f * eq2mwc(pmr->ml.amMoves[0].rScore, &ci));
-    } else {
-        g_string_append(gsz, ":no_moves:0");
+//        if (!pms->nMatchTo || !fOutputMWC)
+//            g_string_append_printf(gsz, ":%.3f",
+//                                   pmr->ml.amMoves[pmr->n.iMove].rScore - pmr->ml.amMoves[0].rScore);
+////        else
+//        g_string_append_printf(gsz, ":%.3f",
+//                               100.0f *
+//                               eq2mwc(pmr->ml.amMoves[pmr->n.iMove].rScore, &ci) -
+//                               100.0f * eq2mwc(pmr->ml.amMoves[0].rScore, &ci));
+//    } else {
+//        g_string_append(gsz, ":-");
     }
 
     g_string_append(gsz, "\n  #\n");
@@ -528,8 +524,9 @@ BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
             rEq = pml->amMoves[i].rScore;
             rEqTop = pml->amMoves[0].rScore;
 
-            g_string_append(gsz, ":");
-            g_string_append(gsz, OutputEquity(rEq, &ci, TRUE));
+            g_string_append_printf(gsz, ":%s:%.3f", OutputEquity(rEq, &ci, FALSE), 100.0f * eq2mwc(rEq, &ci));
+//            g_string_append(gsz, ":");
+//            g_string_append(gsz, OutputEquity(rEq, &ci, TRUE));
 //            strcat(szBuf, );
 
             /* difference */
@@ -544,8 +541,7 @@ BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
             if (exsExport.fMovesDetailProb) {
                 switch (pml->amMoves[i].esMove.et) {
                     case EVAL_EVAL:
-                        /* FIXME: add cubeless and cubeful equities */
-//                        g_string_append_printf(gsz, ":%s", OutputPercents(ar, TRUE));
+                        g_string_append_printf(gsz, ":%s", OutputPercents(ar, TRUE));
 //                        strcat(szBuf, ":");
 //                        strcat(szBuf, OutputPercents(ar, TRUE));
 //                        strcat(szBuf, "\n");
@@ -563,23 +559,24 @@ BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
 
             /* eval parameters */
 
-//            if (fShowParameters) {
+//            if (1) {
 //                switch (pml->amMoves[i].esMove.et) {
 //                    case EVAL_EVAL:
-//                        strcat(szBuf, "        ");
-//                        strcat(szBuf, OutputEvalContext(&pml->amMoves[i].esMove.ec, TRUE));
-//                        strcat(szBuf, "\n");
+//                        g_string_append(gsz, OutputEvalContext(&pml->amMoves[i].esMove.ec, TRUE));
+////                        strcat(szBuf, "        ");
+////                        strcat(szBuf, OutputEvalContext(&pml->amMoves[i].esMove.ec, TRUE));
+////                        strcat(szBuf, "\n");
 //                        break;
 //                    case EVAL_ROLLOUT:
-//                        strcat(szBuf, OutputRolloutContext("        ", &pml->amMoves[i].esMove.rc));
+////                        strcat(szBuf, OutputRolloutContext("        ", &pml->amMoves[i].esMove.rc));
 //                        break;
 //
 //                    default:
 //                        break;
-//
 //                }
 //            }
 //            g_string_append_printf(gsz, "%s", szBuf);
+
             g_string_append(gsz, "\n");
         }
 
@@ -668,16 +665,16 @@ static void formatPlay(GString *gsz, const statcontext *psc, float aaaar[3][2][2
     g_string_append_printf(gsz, "\n>%s", szType[type]);
     for (int i = 1; i >= 0; --i) {
         // Error total EMG (MWC)
-        g_string_append_printf(gsz, ":%+.3f:%+.3f", -aaaar[type][TOTAL][i][NORMALISED],
+        g_string_append_printf(gsz, ":%.3f:%.3f", -aaaar[type][TOTAL][i][NORMALISED],
                                -aaaar[type][TOTAL][i][UNNORMALISED] * 100);
 
         // Error rate mEMG (MWC)
-        g_string_append_printf(gsz, ":%+.3f:%+.3f", -aaaar[type][PERMOVE][i][NORMALISED] * 1000,
+        g_string_append_printf(gsz, ":%.3f:%.3f", -aaaar[type][PERMOVE][i][NORMALISED] * 1000,
                                -aaaar[type][PERMOVE][i][UNNORMALISED] * 100);
 
         // Error rate snowie
         if ((n = psc->anTotalMoves[0] + psc->anTotalMoves[1]) > 0)
-            g_string_append_printf(gsz, ":%+.3f", (float) aaaar[type][TOTAL][i][NORMALISED] / (float) n * -1000);
+            g_string_append_printf(gsz, ":%.3f", (float) aaaar[type][TOTAL][i][NORMALISED] / (float) n * -1000);
         else
             g_string_append(gsz, ":na");
 
@@ -705,8 +702,8 @@ BghDumpStatcontext(GString *gsz, const statcontext *psc, int nMatchTo) {
 
         g_string_append(gsz, "\n>LK");
         for (int i = 1; i >= 0; --i) {
-            g_string_append_printf(gsz, ":%+.3f:%+.3f", psc->arLuck[i][0], psc->arLuck[i][1] * 100);
-            g_string_append_printf(gsz, ":%+.3f:%+.3f",
+            g_string_append_printf(gsz, ":%.3f:%.3f", psc->arLuck[i][0], psc->arLuck[i][1] * 100);
+            g_string_append_printf(gsz, ":%.3f:%.3f",
                                    (float) psc->arLuck[i][0] / (float) psc->anTotalMoves[i] * 1000,
                                    psc->arLuck[i][1] / (float) psc->anTotalMoves[i] * 100);
             if (psc->anTotalMoves[i])
@@ -750,7 +747,7 @@ BghPrintComment(FILE *pf, const moverecord *pmr) {
 }
 
 /*
- * Export a game in HTML
+ * Export a game in BGH format
  *
  * Input:
  *   pf: output file
@@ -758,9 +755,7 @@ BghPrintComment(FILE *pf, const moverecord *pmr) {
  *
  */
 
-static void
-ExportGameText(FILE *pf, listOLD *plGame, const int iGame, const int fLastGame) {
-
+static void ExportGameText(FILE *pf, listOLD *plGame, const int iGame, const int fLastGame) {
     listOLD *pl;
     moverecord *pmr;
     matchstate msExport;
@@ -910,9 +905,7 @@ ExportGameText(FILE *pf, listOLD *plGame, const int iGame, const int fLastGame) 
 //    }
 }
 
-extern void
-CommandExportMatchBackgammonHub(char *sz) {
-
+extern void CommandExportMatchBackgammonHub(char *sz) {
     FILE *pf;
     listOLD *pl;
     int nGames;
