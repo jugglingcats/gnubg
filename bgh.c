@@ -241,17 +241,17 @@ OutputCubeAnalysisFullBgh(float aarOutput[2][NUM_ROLLOUT_OUTPUTS],
 
     FindCubeDecision(arDouble, aarOutput, pci);
 
-//    fMissed = fDouble > -1 && isMissedDouble(arDouble, aarOutput, fDouble, pci);
-//
-//    if (fMissed) {
-//        fAnno = TRUE;
-//
-//        sprintf(strchr(sz, 0), "missed_double:%s:%s",
-//                aszBghSkillType[stDouble],
-//                OutputEquityDiff(arDouble[OUTPUT_NODOUBLE],
-//                                 (arDouble[OUTPUT_TAKE] >
-//                                  arDouble[OUTPUT_DROP]) ? arDouble[OUTPUT_DROP] : arDouble[OUTPUT_TAKE], pci));
-//    }
+    fMissed = fDouble > -1 && isMissedDouble(arDouble, aarOutput, fDouble, pci);
+
+    if (fMissed) {
+        fAnno = TRUE;
+
+        sprintf(strchr(sz, 0), "%s:%s",
+                aszBghSkillType[stDouble],
+                OutputEquityDiff(arDouble[OUTPUT_NODOUBLE],
+                                 (arDouble[OUTPUT_TAKE] >
+                                  arDouble[OUTPUT_DROP]) ? arDouble[OUTPUT_DROP] : arDouble[OUTPUT_TAKE], pci));
+    }
 
     r = arDouble[OUTPUT_TAKE] - arDouble[OUTPUT_DROP];
 
