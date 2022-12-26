@@ -113,7 +113,8 @@ BghMoveIntro(GString *gsz, const matchstate *pms, const int UNUSED(iGame), const
 extern void
 BghPrologue(GString *gsz, const matchstate *pms, const int UNUSED(iGame)) {
 
-    g_string_append_printf(gsz, "\n\n%d:%d:%d:%d\n", pms->cGames, pms->anScore[0], pms->anScore[1], pms->bgv);
+    g_string_append_printf(gsz, "\n\n%d:%d:%d:%d:%d:%d:%d:%d\n", pms->cGames, pms->anScore[0], pms->anScore[1], pms->bgv, pms->nMatchTo, pms->fCubeUse,
+                           pms->fPostCrawford ? 2 : pms->fCrawford ? 1 : 0, pms->fJacoby);
 //    g_string_append_printf(gsz, pms->cGames == 1 ?
 //                                _("The score (after %d game) is: %s %d, %s %d") :
 //                                _("The score (after %d games) is: %s %d, %s %d"),
