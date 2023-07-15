@@ -4,13 +4,16 @@
   <component name="MakefileSettings">
     <option name="linkedExternalProjectsSettings">
       <MakefileProjectSettings>
-        <option name="buildDirectory" value="build" />
-        <option name="buildOptions" value="--makefile=Makefile" />
+        <option name="buildDirectory" value="" />
         <option name="buildSystemName" value="GNU Autotools" />
-        <option name="buildTarget" value="check" />
+        <option name="buildTarget" value="" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="preConfigureCommands" value="#!/bin/sh&#10;#&#10;# GNU Autotools template, feel free to customize.&#10;#&#10;which autoreconf &gt;/dev/null &amp;&amp; autoreconf --install --force --verbose &quot;${PROJECT_DIR:-..}&quot; 2&gt;&amp;1; /bin/sh &quot;${PROJECT_DIR:-..}/configure&quot;" />
-        <option name="switches" value="--makefile=Makefile " />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+          </set>
+        </option>
+        <option name="preConfigureCommands" value="#!/bin/sh&#10;#&#10;# GNU Autotools template, feel free to customize.&#10;#&#10;cd /tmp/gnubg&#10;aclocal &amp;&amp; automake &amp;&amp; autoreconf &amp;&amp; ./configure --with-python=no" />
         <option name="version" value="2" />
       </MakefileProjectSettings>
     </option>

@@ -4934,7 +4934,10 @@ getCubeDecisionOrdering(int aiOrder[3],
         break;
 
     default:
-
+        // when taking a beaver, gnubg doesn't know the correct ordering
+        aiOrder[0] = OUTPUT_NODOUBLE;
+        aiOrder[1] = OUTPUT_TAKE;
+        aiOrder[2] = OUTPUT_DROP;
         g_assert_not_reached();
 
     }
