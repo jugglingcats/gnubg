@@ -65,7 +65,7 @@ static const char *aszBghSkillType[] = {
 
 
 /*
- * Print html header for board: move or cube decision 
+ * Print html header for board: move or cube decision
  *
  * Input:
  *   pf: output file
@@ -431,6 +431,37 @@ BghPrintCubeAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
     }
 }
 
+void BghFormatCheckerMoves(GString *gsz, const matchstate *pms, moverecord *pmr, cubeinfo *ci)
+{
+    for (int i = 0; i < pmr->ml.cMoves; i++) {
+        if (i >= exsExport.nMoves && i != pmr->n.iMove)
+            continue;
+
+        g_string_append(gsz, i == pmr->n.iMove ? "* " : "  ");
+
+        char szMove[32];
+        const movelist *pml = &pmr->ml;
+
+        g_string_append(gsz, FormatMove(szMove, pms->anBoard, pml->amMoves[i].anMove));
+
+        float* ar = pml->amMoves[i].arEvalMove;
+        float rEq = pml->amMoves[i].rScore;
+
+        g_string_append_printf(gsz, ":%s:%.3f", OutputEquity(rEq, ci, FALSE), 100.0f * eq2mwc(rEq, ci));
+
+        if (exsExport.fMovesDetailProb) {
+            switch (pml->amMoves[i].esMove.et) {
+                case EVAL_EVAL:
+                    g_string_append_printf(gsz, ":%s", OutputPercents(ar, TRUE));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        g_string_append(gsz, "\n");
+    }
+}
 
 /*
  * Print move analysis
@@ -443,10 +474,8 @@ BghPrintCubeAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
  *  szExtension: extension of images
  *
  */
-
 static void
 BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
-    char sz[64];
     unsigned int i;
 
     cubeinfo ci;
@@ -459,141 +488,13 @@ BghPrintMoveAnalysis(GString *gsz, const matchstate *pms, moverecord *pmr) {
 
     if (pmr->ml.cMoves > 0) {
         g_string_append_printf(gsz, ":%s", aszBghSkillType[pmr->n.stMove]);
-
-//        if (!pms->nMatchTo || !fOutputMWC)
-//            g_string_append_printf(gsz, ":%.3f",
-//                                   pmr->ml.amMoves[pmr->n.iMove].rScore - pmr->ml.amMoves[0].rScore);
-////        else
-//        g_string_append_printf(gsz, ":%.3f",
-//                               100.0f *
-//                               eq2mwc(pmr->ml.amMoves[pmr->n.iMove].rScore, &ci) -
-//                               100.0f * eq2mwc(pmr->ml.amMoves[0].rScore, &ci));
-//    } else {
-//        g_string_append(gsz, ":-");
     }
 
     g_string_append(gsz, "\n  #\n");
 
     if (pmr->ml.cMoves) {
-
-        for (i = 0; i < pmr->ml.cMoves; i++) {
-            if (i >= exsExport.nMoves && i != pmr->n.iMove)
-                continue;
-
-            g_string_append(gsz, i == pmr->n.iMove ? "* " : "  ");
-//            g_string_append(gsz, FormatMoveHint(szBuf, pms, &pmr->ml, i,
-//                                                i != pmr->n.iMove ||
-//                                                i != pmr->ml.cMoves - 1 ||
-//                                                pmr->ml.cMoves == 1 ||
-//                                                i < exsExport.nMoves,
-//                                                exsExport.fMovesDetailProb,
-//                                                exsExport.afMovesParameters[pmr->ml.amMoves[i].esMove.et - 1]));
-
-            char szTemp[2048], szMove[32];
-//            int fRankKnown=i != pmr->n.iMove ||
-//                           i != pmr->ml.cMoves - 1 ||
-//                           pmr->ml.cMoves == 1 ||
-//                           i < exsExport.nMoves;
-//            int fShowParameters = exsExport.afMovesParameters[pmr->ml.amMoves[i].esMove.et - 1];
-            float *ar, *arStdDev;
-            float rEq, rEqTop;
-            movelist *pml = &pmr->ml;
-
-//            strcpy(szBuf, "");
-
-            /* number */
-
-//            if (i && !fRankKnown)
-//                strcat(szBuf, "   ??  ");
-//            else
-//                sprintf(strchr(szBuf, 0), " %4i. ", i + 1);
-
-            /* eval */
-
-//            sprintf(strchr(szBuf, 0),
-//                    "%-14s   %-28s %s: ",
-//                    FormatEval(szTemp, &pml->amMoves[i].esMove),
-//                    FormatMove(szMove, pms->anBoard,
-//                               pml->amMoves[i].anMove), (!pms->nMatchTo || !fOutputMWC) ? _("Eq.") : _("MWC"));
-            g_string_append(gsz, FormatMove(szMove, pms->anBoard, pml->amMoves[i].anMove));
-//                    , (!pms->nMatchTo || !fOutputMWC) ? _("Eq.") : _("MWC"));
-
-            /* equity or mwc for move */
-
-            ar = pml->amMoves[i].arEvalMove;
-            arStdDev = pml->amMoves[i].arEvalStdDev;
-            rEq = pml->amMoves[i].rScore;
-            rEqTop = pml->amMoves[0].rScore;
-
-            g_string_append_printf(gsz, ":%s:%.3f", OutputEquity(rEq, &ci, FALSE), 100.0f * eq2mwc(rEq, &ci));
-//            g_string_append(gsz, ":");
-//            g_string_append(gsz, OutputEquity(rEq, &ci, TRUE));
-//            strcat(szBuf, );
-
-            /* difference */
-
-//            if (i)
-//                sprintf(strchr(szBuf, 0), " (%s)\n", OutputEquityDiff(rEq, rEqTop, &ci));
-//            else
-//                strcat(szBuf, "\n");
-
-            /* percentages */
-
-            if (exsExport.fMovesDetailProb) {
-                switch (pml->amMoves[i].esMove.et) {
-                    case EVAL_EVAL:
-                        g_string_append_printf(gsz, ":%s", OutputPercents(ar, TRUE));
-//                        strcat(szBuf, ":");
-//                        strcat(szBuf, OutputPercents(ar, TRUE));
-//                        strcat(szBuf, "\n");
-                        break;
-//                    case EVAL_ROLLOUT:
-//                        strcat(szBuf, OutputRolloutResult(":", NULL, (float (*)[NUM_ROLLOUT_OUTPUTS])
-//                                ar, (float (*)[NUM_ROLLOUT_OUTPUTS])
-//                                                               arStdDev, &ci, 0, 1, pml->amMoves[i].esMove.rc.fCubeful));
-//                        break;
-                    default:
-                        break;
-
-                }
-            }
-
-            /* eval parameters */
-
-//            if (1) {
-//                switch (pml->amMoves[i].esMove.et) {
-//                    case EVAL_EVAL:
-//                        g_string_append(gsz, OutputEvalContext(&pml->amMoves[i].esMove.ec, TRUE));
-////                        strcat(szBuf, "        ");
-////                        strcat(szBuf, OutputEvalContext(&pml->amMoves[i].esMove.ec, TRUE));
-////                        strcat(szBuf, "\n");
-//                        break;
-//                    case EVAL_ROLLOUT:
-////                        strcat(szBuf, OutputRolloutContext("        ", &pml->amMoves[i].esMove.rc));
-//                        break;
-//
-//                    default:
-//                        break;
-//                }
-//            }
-//            g_string_append_printf(gsz, "%s", szBuf);
-
-            g_string_append(gsz, "\n");
-        }
-
-//    } else {
-//
-//        if (pmr->n.anMove[0] >= 0)
-//            /* no movelist saved */
-//            g_string_append_printf(gsz, "*    %s\n", FormatMove(sz, pms->anBoard, pmr->n.anMove));
-//        else
-//            /* no legal moves */
-//            /* FIXME: output equity?? */
-//            g_string_append_printf(gsz, "* %s\n", _("Cannot move"));
-//
+        BghFormatCheckerMoves(gsz, pms, pmr, &ci);
     }
-
-//    g_string_append(gsz, "\n");
 }
 
 
@@ -904,6 +805,82 @@ static void ExportGameText(FILE *pf, listOLD *plGame, const int iGame, const int
 //        fputs(gsz->str, pf);
 //        g_string_free(gsz, TRUE);
 //    }
+}
+
+extern void CommandExportHintBackgammonHub(char *sz) {
+    FILE *pf;
+    sz = NextToken(&sz);
+    if (!sz || !*sz) {
+        outputl(_("You must specify a file to export to (see `help export " "match text')."));
+        return;
+    }
+
+    GString *gsz = g_string_new(NULL);
+
+    if (!ms.anDice[0] && !ms.fDoubled) {
+        output("GIVE HINT ON DOUBLE/NO DOUBLE\n");
+    } else if (ms.fDoubled) {
+        output("GIVE HINT ON TAKE\n");
+    } else if (ms.anDice[0]) {
+        cubeinfo ci;
+        int hist;
+        movelist ml;
+        findData fd;
+        const int fSaveShowProg = fShowProgress;
+
+        GetMatchStateCubeInfo(&ci, &ms);
+
+        moverecord* pmr = get_current_moverecord(&hist);
+        if (!pmr)
+            return;
+
+        if (pmr->esChequer.et == EVAL_NONE) {
+            fd.pml = &ml;
+            fd.pboard = msBoard();
+            fd.keyMove = NULL;
+            fd.rThr = arSkillLevel[SKILL_DOUBTFUL];
+            fd.pci = &ci;
+            fd.pec = &GetEvalChequer()->ec;
+            fd.aamf = *GetEvalMoveFilter();
+            if ((RunAsyncProcess(asyncFindMove, &fd, _("Considering move...")) != 0) || fInterrupt) {
+                fShowProgress = fSaveShowProg;
+                return;
+            }
+            fShowProgress = fSaveShowProg;
+
+            pmr_movelist_set(pmr, GetEvalChequer(), &ml);
+        }
+        if (pmr->n.anMove[0] == -1) {
+            pmr->n.iMove = UINT_MAX;
+            pmr->n.stMove = SKILL_NONE;
+        } else {
+            pmr->n.iMove = locateMove(msBoard(), pmr->n.anMove, &pmr->ml);
+            /* Tutor mode may have called asyncFindMove() above before
+             * n.iMove was known. Do it again, ensuring that the actual
+             * move is evaluated at the best ply. */
+            fd.pml = &ml;
+            fd.pboard = msBoard();
+            fd.keyMove = &(pmr->ml.amMoves[pmr->n.iMove].key);
+            fd.rThr = arSkillLevel[SKILL_DOUBTFUL];
+            fd.pci = &ci;
+            fd.pec = &GetEvalChequer()->ec;
+            fd.aamf = *GetEvalMoveFilter();
+            asyncFindMove(&fd);
+            pmr_movelist_set(pmr, GetEvalChequer(), &ml);
+            find_skills(pmr, &ms, FALSE, -1);
+        }
+        BghFormatCheckerMoves(gsz, &ms, pmr, &ci);
+    }
+
+    if ((pf = gnubg_g_fopen(sz, "w")) == 0) {
+        outputerr(sz);
+        g_free(sz);
+        return;
+    }
+
+    fputs(gsz->str, pf);
+    g_string_free(gsz, TRUE);
+    fclose(pf);
 }
 
 extern void CommandExportMatchBackgammonHub(char *sz) {

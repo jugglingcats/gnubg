@@ -7,6 +7,7 @@
         <option name="buildDirectory" value="" />
         <option name="buildSystemName" value="GNU Autotools" />
         <option name="buildTarget" value="" />
+        <option name="cleanTarget" value="clean install" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>

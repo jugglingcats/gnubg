@@ -2272,11 +2272,13 @@ hint_take(int show, int did_take)
             (pmr->CubeDecPtr->aarOutput, pmr->CubeDecPtr->aarStdDev, &pmr->CubeDecPtr->esDouble, &ci));
 }
 
+void BghFormatCheckerMoves(GString *gsz, const matchstate *pms, moverecord *pmr, cubeinfo *ci);
+
 extern void
 hint_move(char *sz, gboolean show, procrecorddata * procdatarec)
 {
     unsigned int i;
-    char szBuf[1024];
+    char szBuf[8096];
     int parse_n = ParseNumber(&sz);
     unsigned int n = (parse_n <= 0) ? 10 : parse_n;
     moverecord *pmr;
@@ -2362,6 +2364,12 @@ hint_move(char *sz, gboolean show, procrecorddata * procdatarec)
         procdatarec->avOutputData[PROCREC_HINT_ARGOUT_MOVERECORD] = (void *) &pmr;
     }
 
+    GString *gsz = g_string_new(NULL);
+    BghFormatCheckerMoves(gsz, &ms, pmr, &ci);
+    strncpy(szBuf, gsz->str, sizeof(szBuf) - 1);
+    g_string_free(gsz, TRUE);
+    output(szBuf);
+
     n = MIN(pmr->ml.cMoves, n);
     for (i = 0; i < n; i++) {
         if (show)
@@ -2372,6 +2380,22 @@ hint_move(char *sz, gboolean show, procrecorddata * procdatarec)
                 break;
         }
     }
+
+    // n = MIN(pmr->ml.cMoves, n);
+    // for (i = 0; i < n; i++) {
+    //     if (show) {
+    //         GetMatchStateCubeInfo(&ci, &ms);
+    //         GString *gsz = g_string_new(NULL);
+    //         BghFormatCheckerMoves(gsz, &ms, pmr, &ci);
+    //         strncpy(szBuf, gsz->str, sizeof(szBuf) - 1);
+    //         g_string_free(gsz, TRUE);
+    //         output(szBuf);
+    //     } else if (procdatarec && procdatarec->pfProcessRecord) {
+    //         procdatarec->avOutputData[PROCREC_HINT_ARGOUT_INDEX] = (void *) (ptrdiff_t) i;
+    //         if (!procdatarec->pfProcessRecord(procdatarec))
+    //             break;
+    //     }
+    // }
 }
 
 extern void
