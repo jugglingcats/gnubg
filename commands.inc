@@ -216,6 +216,10 @@ static command acAnnotateRoll[] = {
     { "bgh", CommandExportHintBackgammonHub,
       N_("Records hint for current position in Backgammon Hub format"),
       szFILENAME, &cFilename }
+}, acExportMove[] = {
+    { "bgh", CommandExportMoveBackgammonHub,
+      N_("Records move for current position in simple format"),
+      szFILENAME, &cFilename }
 }, acExportPosition[] = {
     { "bgo2clipboard", CommandExportPositionGOL2Clipboard,
       N_("Copy the current position in .html format to clipboard"
@@ -273,6 +277,8 @@ static command acAnnotateRoll[] = {
       acExportPosition },
     { "hint", NULL, N_("Write hint for the current position to a file"), NULL,
       acExportHint },
+    { "move", NULL, N_("Write move for the current position to a file"), NULL,
+      acExportMove },
     { "session", NULL, N_("Record a log of the session so far to a file"),
       NULL, acExportSession },
     { NULL, NULL, NULL, NULL, NULL }

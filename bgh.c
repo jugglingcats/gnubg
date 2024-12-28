@@ -26,6 +26,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <glib.h>
+#include <matchequity.h>
+#include <simd.h>
+
 #include "glib-ext.h"
 
 #include "backgammon.h"
@@ -806,6 +809,378 @@ static void ExportGameText(FILE *pf, listOLD *plGame, const int iGame, const int
 //        g_string_free(gsz, TRUE);
 //    }
 }
+
+
+
+
+
+void write_move_to_file(FILE *f) {
+    output("Exporting move\n");
+    moverecord *pmr;
+    cubeinfo ci;
+    float arDouble[4], rDoublePoint;
+
+    GetMatchStateCubeInfo(&ci, &ms);
+
+    if (ms.fResigned) {
+        output("Player resigned!\n");
+        exit(-1);
+    } else if (ms.fDoubled) {
+            decisionData dd;
+            cubedecision cd;
+
+            /* Consider cube action */
+
+            /*
+             * We may get here in three different scenarios:
+             * (1) normal double by opponent: fMove != fTurn and fCubeOwner is
+             *     either -1 (centered cube) or = fMove.
+             * (2) beaver by opponent: fMove = fTurn and fCubeOwner = !
+             *     fMove
+             * (3) raccoon by opponent: fMove != fTurn and fCubeOwner =
+             *     fTurn.
+             *
+             */
+
+            if (ms.fMove != ms.fTurn && ms.fCubeOwner == ms.fTurn) {
+
+                /* raccoon: consider this a normal double, i.e.
+                 * fCubeOwner = fMove */
+
+                SetCubeInfo(&ci, ci.nCube,
+                            ci.fMove, ci.fMove, ci.nMatchTo, ci.anScore, ci.fCrawford, ci.fJacoby, ci.fBeavers, ci.bgv);
+
+            }
+
+            if (ms.fMove == ms.fTurn && ms.fCubeOwner != ms.fMove) {
+
+                /* opponent beavered: consider this a normal double by me */
+
+                SetCubeInfo(&ci, ci.nCube,
+                            ci.fMove, ci.fMove, ci.nMatchTo, ci.anScore, ci.fCrawford, ci.fJacoby, ci.fBeavers, ci.bgv);
+
+            }
+
+            /* Evaluate cube decision */
+            dd.pboard = msBoard();
+            dd.pci = &ci;
+            dd.pes = &ap[ms.fTurn].esCube;
+            if (RunAsyncProcess((AsyncFun) asyncCubeDecision, &dd, _("Considering cube action...")) != 0) {
+                output("Async process failed!\n");
+                exit(-1);
+            }
+
+            // current_pmr_cubedata_update(dd.pes, dd.aarOutput, dd.aarStdDev);
+
+            cd = FindCubeDecision(arDouble, dd.aarOutput, &ci);
+
+            // fComputerDecision = TRUE;
+
+            if (ms.fTurn == ms.fMove) {
+
+                /* opponent has beavered */
+
+                switch (cd) {
+
+                case DOUBLE_TAKE:
+                case REDOUBLE_TAKE:
+                case TOOGOOD_TAKE:
+                case TOOGOODRE_TAKE:
+                case DOUBLE_PASS:
+                case TOOGOOD_PASS:
+                case REDOUBLE_PASS:
+                case TOOGOODRE_PASS:
+                case OPTIONAL_DOUBLE_TAKE:
+                case OPTIONAL_REDOUBLE_TAKE:
+                case OPTIONAL_DOUBLE_PASS:
+                case OPTIONAL_REDOUBLE_PASS:
+
+                    /* Opponent out of his right mind: Raccoon if possible */
+
+                    if (ms.cBeavers < nBeavers && !ms.nMatchTo && ms.nCube < (MAX_CUBE >> 1))
+                        /* he he: raccoon */
+                        fputs("DOUBLE", f);
+                        // CommandRedouble(NULL);
+                    else
+                        /* Damn, no raccoons allowed */
+                        fputs("TAKE", f);
+                        // CommandTake(NULL);
+
+                    break;
+
+
+                case NODOUBLE_TAKE:
+                case NO_REDOUBLE_TAKE:
+
+                    /* hmm, oops: opponent beavered us:
+                     * consider dropping the beaver */
+
+                    /* Note, this should not happen as the computer plays
+                     * "perfectly"!! */
+
+                    if (arDouble[OUTPUT_TAKE] <= -1.0f)
+                        /* drop beaver */
+                        fputs("DROP", f);
+                        // CommandDrop(NULL);
+                    else
+                        /* take */
+                            fputs("TAKE", f);
+                        // CommandTake(NULL);
+
+                    break;
+
+
+                case DOUBLE_BEAVER:
+                case NODOUBLE_BEAVER:
+                case NO_REDOUBLE_BEAVER:
+                case OPTIONAL_DOUBLE_BEAVER:
+
+                    /* opponent beaver was correct */
+                    fputs("TAKE", f);
+
+                    // CommandTake(NULL);
+                    break;
+
+                default:
+
+                    g_assert_not_reached();
+
+                }               /* switch cubedecision */
+
+            } /* consider beaver */
+            else {
+
+                /* normal double by opponent */
+
+                switch (cd) {
+
+                case DOUBLE_TAKE:
+                case NODOUBLE_TAKE:
+                case TOOGOOD_TAKE:
+                case REDOUBLE_TAKE:
+                case NO_REDOUBLE_TAKE:
+                case TOOGOODRE_TAKE:
+                case NODOUBLE_DEADCUBE:
+                case NO_REDOUBLE_DEADCUBE:
+                case OPTIONAL_DOUBLE_TAKE:
+                case OPTIONAL_REDOUBLE_TAKE:
+                    fputs("TAKE", f);
+                    // CommandTake(NULL);
+                    break;
+
+                case DOUBLE_PASS:
+                case TOOGOOD_PASS:
+                case REDOUBLE_PASS:
+                case TOOGOODRE_PASS:
+                case OPTIONAL_DOUBLE_PASS:
+                case OPTIONAL_REDOUBLE_PASS:
+                    fputs("DROP", f);
+                    // CommandDrop(NULL);
+                    break;
+
+                case DOUBLE_BEAVER:
+                case NODOUBLE_BEAVER:
+                case NO_REDOUBLE_BEAVER:
+                case OPTIONAL_DOUBLE_BEAVER:
+
+                    if (ms.cBeavers < nBeavers && !ms.nMatchTo && ms.nCube < (MAX_CUBE >> 1))
+                        /* Beaver all night! */
+                        fputs("DOUBLE", f);
+                        // CommandRedouble(NULL);
+                    else
+                        /* Damn, no beavers allowed */
+                        fputs("TAKE", f);
+                        // CommandTake(NULL);
+                    break;
+
+                default:
+
+                    g_assert_not_reached();
+
+                }               /* switch cubedecision */
+
+            }                   /* normal cube */
+        } else {
+            findData fd;
+            TanBoard anBoardMove;
+            float arResign[NUM_ROLLOUT_OUTPUTS];
+            static char achResign[3] = { 'n', 'g', 'b' };
+            char ach[2];
+            /* Don't use the global board for this call, to avoid
+             * race conditions with updating the board and aborting the
+             * move with an interrupt. */
+            memcpy(anBoardMove, msBoard(), sizeof(TanBoard));
+
+            /* Consider resigning -- no point wasting time over the decision,
+             * so only evaluate at 0 plies. */
+
+            if (ClassifyPosition(msBoard(), ms.bgv) <= CLASS_RACE) {
+                int nResign;
+
+                evalcontext ecResign = { FALSE, 0, FALSE, TRUE, 0.0 };
+                evalsetup esResign;
+
+                esResign.et = EVAL_EVAL;
+                esResign.ec = ecResign;
+
+                nResign = getResignation(arResign, anBoardMove, &ci, &esResign);
+
+                if (nResign > 0 && nResign > ms.fResignationDeclined) {
+                    // ach[0] = achResign[nResign - 1];
+                    // ach[1] = 0;
+                    fputs("RESIGN", f);
+                    return;
+                }
+            }
+
+            /* Consider doubling */
+            if (ms.fCubeUse && !ms.anDice[0] && ms.nCube < MAX_CUBE && GetDPEq(NULL, NULL, &ci)) {
+                evalcontext ecDH;
+                SSE_ALIGN(float arOutput[NUM_ROLLOUT_OUTPUTS]);
+                memcpy(&ecDH, &ap[ms.fTurn].esCube.ec, sizeof ecDH);
+                ecDH.fCubeful = FALSE;
+                if (ecDH.nPlies)
+                    ecDH.nPlies--;
+
+                /* We have access to the cube */
+
+                /* Determine market window */
+
+                if (EvaluatePosition(NULL, (ConstTanBoard) anBoardMove, arOutput, &ci, &ecDH)) {
+                    output("Evaluate position failed!\n");
+                    exit(-1);
+                }
+
+                rDoublePoint = GetDoublePointDeadCube(arOutput, &ci);
+
+                if (arOutput[0] >= rDoublePoint) {
+
+                    /* We're in market window */
+                    decisionData dd;
+                    cubedecision cd;
+
+                    /* Consider cube action */
+                    dd.pboard = msBoard();
+                    dd.pci = &ci;
+                    dd.pes = &ap[ms.fTurn].esCube;
+                    if (RunAsyncProcess((AsyncFun) asyncCubeDecision, &dd, _("Considering cube action...")) != 0) {
+                        output("Async process failed!\n");
+                        exit(-1);
+                    }
+
+                    cd = FindCubeDecision(arDouble, dd.aarOutput, &ci);
+
+                    switch (cd) {
+
+                    case DOUBLE_TAKE:
+                    case REDOUBLE_TAKE:
+                    case DOUBLE_PASS:
+                    case REDOUBLE_PASS:
+                    case DOUBLE_BEAVER:
+                        fputs("DOUBLE", f);
+                        return;
+
+                    case NODOUBLE_TAKE:
+                    case TOOGOOD_TAKE:
+                    case NO_REDOUBLE_TAKE:
+                    case TOOGOODRE_TAKE:
+                    case TOOGOOD_PASS:
+                    case TOOGOODRE_PASS:
+                    case NODOUBLE_BEAVER:
+                    case NO_REDOUBLE_BEAVER:
+                        /* better leave cube where it is: no op */
+                        break;
+
+                    case OPTIONAL_DOUBLE_BEAVER:
+                    case OPTIONAL_DOUBLE_TAKE:
+                    case OPTIONAL_REDOUBLE_TAKE:
+                    case OPTIONAL_DOUBLE_PASS:
+                    case OPTIONAL_REDOUBLE_PASS:
+                        if (ap[ms.fTurn].esCube.et == EVAL_EVAL && ap[ms.fTurn].esCube.ec.nPlies == 0
+                            && arOutput[0] > 0.001f) {
+                            /* double if 0-ply except when about to lose game */
+                            fputs("DOUBLE", f);
+                            // CommandDouble(NULL);
+                            return;
+                        }
+                        break;
+
+                    default:
+
+                        g_assert_not_reached();
+
+                    }
+
+                }               /* market window */
+            }
+
+            /* access to cube */
+            /* Roll dice and move */
+            if (!ms.anDice[0]) {
+                fputs("ROLL", f);
+                return;
+            }
+
+            pmr = NewMoveRecord();
+
+            pmr->mt = MOVE_NORMAL;
+            pmr->anDice[0] = MAX(ms.anDice[0], ms.anDice[1]);
+            pmr->anDice[1] = MIN(ms.anDice[0], ms.anDice[1]);
+            pmr->fPlayer = ms.fTurn;
+            pmr->esChequer = ap[ms.fTurn].esChequer;
+
+
+            fd.pml = &pmr->ml;
+            fd.pboard = (ConstTanBoard) anBoardMove;
+            fd.keyMove = NULL;
+            fd.rThr = 0.0f;
+            fd.pci = &ci;
+            fd.pec = &ap[ms.fTurn].esChequer.ec;
+            fd.aamf = ap[ms.fTurn].aamf;
+            if ((RunAsyncProcess((AsyncFun) asyncFindMove, &fd, _("Considering move...")) != 0) || fInterrupt) {
+                output("Async process failed\n");
+                exit(-1);
+            }
+            /* resorts the moves according to cubeful (if applicable),
+             * cubeless and chequer on highest point to avoid some silly
+             * looking moves */
+
+            RefreshMoveList(&pmr->ml, NULL);
+
+            /* make the move found above */
+            if (pmr->ml.cMoves) {
+                memcpy(pmr->n.anMove, pmr->ml.amMoves[0].anMove, sizeof(pmr->n.anMove));
+                pmr->n.iMove = 0;
+            }
+
+            /* write move to stdout */
+            char buf[128];
+            FormatMove(buf, msBoard(), pmr->n.anMove);
+            fputs(buf, f);
+
+            return;
+        }
+}
+
+extern void CommandExportMoveBackgammonHub(char *sz)
+{
+    FILE *f;
+
+    if ( strcmp("-", sz)==0 ) {
+        f=stdout;
+    } else {
+        f=fopen(sz, "w");
+    }
+
+    write_move_to_file(f);
+    fflush(f);
+    fclose(f);
+}
+
+
+
+
+
 
 extern void CommandExportHintBackgammonHub(char *sz) {
     FILE *pf;
