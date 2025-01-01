@@ -1,5 +1,5 @@
 set display off
 set player 0 gnubg
 set player 1 gnubg
-set xgid XGID=-dB-BBBB-aA-dB---b-c---AaA:1:-1:1:51:2:0:0:7:10
+set xgid XGID=aBA-BbC-BA--aB---bacbb-Ba-:1:1:1:00:0:0:0:5:10
 export move bgh -
