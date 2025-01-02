@@ -237,44 +237,9 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/README" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backgammon.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/bgh.c" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/clion/gnubg/bgh.c" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/format.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/gnubg.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/matches/full_match.sgf" root0="FORCE_HIGHLIGHTING" />
@@ -1231,7 +1196,8 @@
       <workItem from="1659888223537" duration="1007000" />
       <workItem from="1659890194376" duration="4896000" />
       <workItem from="1734996347159" duration="26897000" />
-      <workItem from="1735463146162" duration="7898000" />
+      <workItem from="1735463146162" duration="9738000" />
+      <workItem from="1735804308865" duration="3554000" />
     </task>
     <task id="LOCAL-00001" summary="Fix bgh generation issue for beavers">
       <option name="closed" value="true" />
@@ -1257,7 +1223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735399753354</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Handle drop/take">
+      <option name="closed" value="true" />
+      <created>1735761765473</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735761765473</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1279,7 +1253,8 @@
     <MESSAGE value="Add ability to export checker hint" />
     <MESSAGE value="Add export move option" />
     <MESSAGE value="Handle double/take" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handle double/take" />
+    <MESSAGE value="Handle drop/take" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle drop/take" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1291,25 +1266,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/bgh.c</url>
-          <line>1026</line>
+          <line>1011</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/bgh.c</url>
-          <line>827</line>
-          <option name="timeStamp" value="15" />
+          <line>881</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CLionNativeAppRunConfigurationType">
-        <watch expression="ms.anDice" language="C++" />
-        <watch expression="ms" language="C++" />
-        <watch expression="pci-&gt;anScore[pci-&gt;fMove] + pci-&gt;nCube &lt; pci-&gt;nMatchTo" language="C++" />
-        <watch expression="(pci-&gt;anScore[pci-&gt;fMove] == pci-&gt;nMatchTo - 1)" language="C++" />
-        <watch expression="(pci-&gt;fCubeOwner == -1) || (pci-&gt;fCubeOwner == pci-&gt;fMove)" language="C++" />
-        <watch expression="pci-&gt;fCubeOwner" language="C++" />
-        <watch expression="pci-&gt;fMove" language="C++" />
+        <watch expression="arOutput[0]" language="C++" />
       </configuration>
     </watches-manager>
   </component>

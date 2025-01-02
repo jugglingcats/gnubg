@@ -859,9 +859,14 @@ void write_move_to_file(FILE *f) {
         }
     }
 
-    int dp_eq = GetDPEq(NULL, NULL, &ci);
     /* Consider doubling */
-    if (ms.fCubeUse && !ms.anDice[0] && ms.nCube < MAX_CUBE && dp_eq) {
+    if (!ms.anDice[0]) {
+        int dp_eq = GetDPEq(NULL, NULL, &ci);
+        if ( !(ms.fCubeUse && ms.nCube < MAX_CUBE && dp_eq) ) {
+            output("Dice not rolled and double not available\n");
+            exit(-1);
+        }
+
         evalcontext ecDH;
         SSE_ALIGN(float arOutput[NUM_ROLLOUT_OUTPUTS]);
         memcpy(&ecDH, &ap[ms.fTurn].esCube.ec, sizeof ecDH);
@@ -869,91 +874,69 @@ void write_move_to_file(FILE *f) {
         if (ecDH.nPlies)
             ecDH.nPlies--;
 
-        /* We have access to the cube */
+        // if (EvaluatePosition(NULL, (ConstTanBoard) anBoardMove, arOutput, &ci, &ecDH)) {
+        //     output("Evaluate position failed!\n");
+        //     exit(-1);
+        // }
 
-        /* Determine market window */
+        // rDoublePoint = GetDoublePointDeadCube(arOutput, &ci);
 
-        if (EvaluatePosition(NULL, (ConstTanBoard) anBoardMove, arOutput, &ci, &ecDH)) {
-            output("Evaluate position failed!\n");
+        /* We're in market window */
+        decisionData dd;
+        cubedecision cd;
+
+        /* Consider cube action */
+        dd.pboard = msBoard();
+        dd.pci = &ci;
+        dd.pes = &ap[ms.fTurn].esCube;
+        if (RunAsyncProcess((AsyncFun) asyncCubeDecision, &dd, _("Considering cube action...")) != 0) {
+            output("Async process failed!\n");
             exit(-1);
         }
 
-        rDoublePoint = GetDoublePointDeadCube(arOutput, &ci);
+        cd = FindCubeDecision(arDouble, dd.aarOutput, &ci);
+        // int optional_double = ap[ms.fTurn].esCube.et == EVAL_EVAL && ap[ms.fTurn].esCube.ec.nPlies == 0
+        //     && arOutput[0] > 0.001f;
 
-        if (arOutput[0] >= rDoublePoint) {
+        switch (cd) {
+        case DOUBLE_TAKE:
+        case REDOUBLE_TAKE:
+        case DOUBLE_BEAVER:
+            fputs("DOUBLE/TAKE", f);
+            return;
 
-            /* We're in market window */
-            decisionData dd;
-            cubedecision cd;
+        case DOUBLE_PASS:
+        case REDOUBLE_PASS:
+            fputs("DOUBLE/DROP", f);
+            return;
 
-            /* Consider cube action */
-            dd.pboard = msBoard();
-            dd.pci = &ci;
-            dd.pes = &ap[ms.fTurn].esCube;
-            if (RunAsyncProcess((AsyncFun) asyncCubeDecision, &dd, _("Considering cube action...")) != 0) {
-                output("Async process failed!\n");
-                exit(-1);
-            }
+        case NODOUBLE_TAKE:
+        case NO_REDOUBLE_TAKE:
+        case TOOGOOD_TAKE:
+        case TOOGOODRE_TAKE:
+        case NODOUBLE_BEAVER:
+        case NO_REDOUBLE_BEAVER:
+            fputs("ROLL/TAKE", f);
+            return;
 
-            cd = FindCubeDecision(arDouble, dd.aarOutput, &ci);
-            int optional_double = ap[ms.fTurn].esCube.et == EVAL_EVAL && ap[ms.fTurn].esCube.ec.nPlies == 0
-                && arOutput[0] > 0.001f;
+        case TOOGOOD_PASS:
+        case TOOGOODRE_PASS:
+            fputs("ROLL/DROP", f);
+            return;
 
-            switch (cd) {
-                case DOUBLE_TAKE:
-                case REDOUBLE_TAKE:
-                case DOUBLE_BEAVER:
-                    fputs("DOUBLE/TAKE", f);
-                    return;
+        case OPTIONAL_DOUBLE_TAKE:
+        case OPTIONAL_REDOUBLE_TAKE:
+        case OPTIONAL_DOUBLE_BEAVER:
+            fputs("DOUBLE/TAKE", f);
+            return;
+        case OPTIONAL_DOUBLE_PASS:
+        case OPTIONAL_REDOUBLE_PASS:
+            fputs("DOUBLE/DROP", f);
+            return;
 
-                case DOUBLE_PASS:
-                case REDOUBLE_PASS:
-                    fputs("DOUBLE/DROP", f);
-                    return;
-
-                case NODOUBLE_TAKE:
-                case NO_REDOUBLE_TAKE:
-                case TOOGOOD_TAKE:
-                case TOOGOODRE_TAKE:
-                case NODOUBLE_BEAVER:
-                case NO_REDOUBLE_BEAVER:
-                    fputs("ROLL/TAKE", f);
-                    return;
-
-                case TOOGOOD_PASS:
-                case TOOGOODRE_PASS:
-                    fputs("ROLL/DROP", f);
-                    return;
-
-                case OPTIONAL_DOUBLE_TAKE:
-                case OPTIONAL_REDOUBLE_TAKE:
-                case OPTIONAL_DOUBLE_BEAVER:
-                    if ( optional_double ) {
-                        fputs("DOUBLE/TAKE", f);
-                    } else {
-                        fputs("ROLL/TAKE", f);
-                    }
-                    return;
-                case OPTIONAL_DOUBLE_PASS:
-                case OPTIONAL_REDOUBLE_PASS:
-                    if ( optional_double ) {
-                        fputs("DOUBLE/DROP", f);
-                    } else {
-                        fputs("ROLL/DROP", f);
-                    }
-                    return;
-
-                default:
-                    g_assert_not_reached();
-            }
+        default:
+            g_assert_not_reached();
         }
-    }
-
-    /* access to cube */
-    /* Roll dice and move */
-    if (!ms.anDice[0]) {
-        fputs("ROLL", f);
-        return;
     }
 
     pmr = NewMoveRecord();
@@ -1006,7 +989,9 @@ extern void CommandExportMoveBackgammonHub(char *sz)
 
     write_move_to_file(f);
     fflush(f);
-    fclose(f);
+    if ( f != stdout ) {
+        fclose(f);
+    }
 }
 
 

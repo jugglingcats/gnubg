@@ -1,5 +1,30 @@
-set display off
+set threads 2
+
 set player 0 gnubg
+set player 0 chequerplay evaluation cubeful true
+set player 0 chequerplay evaluation plies 0
+set player 0 chequerplay evaluation prune false
+set player 0 chequerplay evaluation deterministic true
+set player 0 chequerplay evaluation noise 0.015
+set player 0 cubedecision evaluation cubeful true
+set player 0 cubedecision evaluation plies 0
+set player 0 cubedecision evaluation prune false
+set player 0 cubedecision evaluation deterministic true
+set player 0 cubedecision evaluation noise 0.015
+
+
 set player 1 gnubg
-set xgid XGID=aBA-BbC-BA--aB---bacbb-Ba-:1:1:1:00:0:0:0:5:10
+set player 1 chequerplay evaluation cubeful true
+set player 1 chequerplay evaluation plies 0
+set player 1 chequerplay evaluation prune false
+set player 1 chequerplay evaluation deterministic true
+set player 1 chequerplay evaluation noise 0.015
+set player 1 cubedecision evaluation cubeful true
+set player 1 cubedecision evaluation plies 0
+set player 1 cubedecision evaluation prune false
+set player 1 cubedecision evaluation deterministic true
+set player 1 cubedecision evaluation noise 0.015
+
+set xgid a-B-b-D-C---cE-a---dbb-A--:0:0:1:00:0:0:0:7:10
+
 export move bgh -
