@@ -7,7 +7,7 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="85" type="long" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -237,6 +237,20 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/README" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/backgammon.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/bgh.c" root0="FORCE_HIGHLIGHTING" />
@@ -310,7 +324,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MakefileSettings",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -1048,15 +1062,15 @@
       <item itemvalue="Native Application.README" />
       <item itemvalue="Native Application.TAGS" />
       <item itemvalue="Native Application.TODO" />
-      <item itemvalue="Native Application.all" />
       <item itemvalue="Native Application.all-am" />
       <item itemvalue="Native Application.all-recursive" />
+      <item itemvalue="Native Application.all" />
       <item itemvalue="Native Application.am--depfiles" />
       <item itemvalue="Native Application.am--refresh" />
       <item itemvalue="Native Application.bearoffdump" />
-      <item itemvalue="Native Application.check" />
       <item itemvalue="Native Application.check-am" />
       <item itemvalue="Native Application.check-recursive" />
+      <item itemvalue="Native Application.check" />
       <item itemvalue="Native Application.clean-am" />
       <item itemvalue="Native Application.clean-binPROGRAMS" />
       <item itemvalue="Native Application.clean-cscope" />
@@ -1066,14 +1080,13 @@
       <item itemvalue="Native Application.compile" />
       <item itemvalue="Native Application.configure" />
       <item itemvalue="Native Application.cscope" />
-      <item itemvalue="Native Application.cscopelist" />
       <item itemvalue="Native Application.cscopelist-am" />
       <item itemvalue="Native Application.cscopelist-recursive" />
-      <item itemvalue="Native Application.ctags" />
+      <item itemvalue="Native Application.cscopelist" />
       <item itemvalue="Native Application.ctags-am" />
       <item itemvalue="Native Application.ctags-recursive" />
+      <item itemvalue="Native Application.ctags" />
       <item itemvalue="Native Application.depcomp" />
-      <item itemvalue="Native Application.dist" />
       <item itemvalue="Native Application.dist-all" />
       <item itemvalue="Native Application.dist-bzip2" />
       <item itemvalue="Native Application.dist-gzip" />
@@ -1083,95 +1096,96 @@
       <item itemvalue="Native Application.dist-xz" />
       <item itemvalue="Native Application.dist-zip" />
       <item itemvalue="Native Application.dist-zstd" />
+      <item itemvalue="Native Application.dist" />
       <item itemvalue="Native Application.distcheck" />
-      <item itemvalue="Native Application.distclean" />
       <item itemvalue="Native Application.distclean-am" />
-      <item itemvalue="Native Application.distdir-am" />
       <item itemvalue="Native Application.distclean-compile" />
       <item itemvalue="Native Application.distclean-generic" />
       <item itemvalue="Native Application.distclean-hdr" />
       <item itemvalue="Native Application.distclean-libtool" />
       <item itemvalue="Native Application.distclean-recursive" />
       <item itemvalue="Native Application.distclean-tags" />
+      <item itemvalue="Native Application.distclean" />
       <item itemvalue="Native Application.distcleancheck" />
+      <item itemvalue="Native Application.distdir-am" />
       <item itemvalue="Native Application.distdir" />
       <item itemvalue="Native Application.distuninstallcheck" />
-      <item itemvalue="Native Application.dvi" />
       <item itemvalue="Native Application.dvi-am" />
       <item itemvalue="Native Application.dvi-recursive" />
-      <item itemvalue="Native Application.gnubg" />
+      <item itemvalue="Native Application.dvi" />
       <item itemvalue="Native Application.gnubg cli" />
-      <item itemvalue="Native Application.html" />
+      <item itemvalue="Native Application.gnubg" />
       <item itemvalue="Native Application.html-am" />
       <item itemvalue="Native Application.html-recursive" />
-      <item itemvalue="Native Application.info" />
+      <item itemvalue="Native Application.html" />
       <item itemvalue="Native Application.info-am" />
       <item itemvalue="Native Application.info-recursive" />
-      <item itemvalue="Native Application.install" />
+      <item itemvalue="Native Application.info" />
       <item itemvalue="Native Application.install-am" />
       <item itemvalue="Native Application.install-binPROGRAMS" />
-      <item itemvalue="Native Application.install-data" />
       <item itemvalue="Native Application.install-data-am" />
       <item itemvalue="Native Application.install-data-recursive" />
-      <item itemvalue="Native Application.install-dvi" />
+      <item itemvalue="Native Application.install-data" />
       <item itemvalue="Native Application.install-dvi-am" />
       <item itemvalue="Native Application.install-dvi-recursive" />
-      <item itemvalue="Native Application.install-exec" />
+      <item itemvalue="Native Application.install-dvi" />
       <item itemvalue="Native Application.install-exec-am" />
       <item itemvalue="Native Application.install-exec-recursive" />
-      <item itemvalue="Native Application.install-html" />
+      <item itemvalue="Native Application.install-exec" />
       <item itemvalue="Native Application.install-html-am" />
       <item itemvalue="Native Application.install-html-recursive" />
-      <item itemvalue="Native Application.install-info" />
+      <item itemvalue="Native Application.install-html" />
       <item itemvalue="Native Application.install-info-am" />
       <item itemvalue="Native Application.install-info-recursive" />
+      <item itemvalue="Native Application.install-info" />
       <item itemvalue="Native Application.install-man" />
-      <item itemvalue="Native Application.install-pdf" />
       <item itemvalue="Native Application.install-pdf-am" />
       <item itemvalue="Native Application.install-pdf-recursive" />
+      <item itemvalue="Native Application.install-pdf" />
       <item itemvalue="Native Application.install-pkgdataDATA" />
-      <item itemvalue="Native Application.install-ps" />
       <item itemvalue="Native Application.install-ps-am" />
       <item itemvalue="Native Application.install-ps-recursive" />
+      <item itemvalue="Native Application.install-ps" />
       <item itemvalue="Native Application.install-recursive" />
       <item itemvalue="Native Application.install-sh" />
       <item itemvalue="Native Application.install-strip" />
-      <item itemvalue="Native Application.installcheck" />
+      <item itemvalue="Native Application.install" />
       <item itemvalue="Native Application.installcheck-am" />
       <item itemvalue="Native Application.installcheck-recursive" />
-      <item itemvalue="Native Application.installdirs" />
+      <item itemvalue="Native Application.installcheck" />
       <item itemvalue="Native Application.installdirs-am" />
       <item itemvalue="Native Application.installdirs-recursive" />
-      <item itemvalue="Native Application.maintainer-clean" />
+      <item itemvalue="Native Application.installdirs" />
       <item itemvalue="Native Application.maintainer-clean-am" />
       <item itemvalue="Native Application.maintainer-clean-generic" />
       <item itemvalue="Native Application.maintainer-clean-recursive" />
+      <item itemvalue="Native Application.maintainer-clean" />
       <item itemvalue="Native Application.makebearoff" />
       <item itemvalue="Native Application.makehyper" />
       <item itemvalue="Native Application.makeweights" />
       <item itemvalue="Native Application.missing" />
       <item itemvalue="Native Application.mkinstalldirs" />
-      <item itemvalue="Native Application.mostlyclean" />
       <item itemvalue="Native Application.mostlyclean-am" />
       <item itemvalue="Native Application.mostlyclean-compile" />
       <item itemvalue="Native Application.mostlyclean-generic" />
       <item itemvalue="Native Application.mostlyclean-libtool" />
       <item itemvalue="Native Application.mostlyclean-recursive" />
-      <item itemvalue="Native Application.pdf" />
+      <item itemvalue="Native Application.mostlyclean" />
       <item itemvalue="Native Application.pdf-am" />
       <item itemvalue="Native Application.pdf-recursive" />
-      <item itemvalue="Native Application.ps" />
+      <item itemvalue="Native Application.pdf" />
       <item itemvalue="Native Application.ps-am" />
       <item itemvalue="Native Application.ps-recursive" />
+      <item itemvalue="Native Application.ps" />
       <item itemvalue="Native Application.stamp-h1" />
-      <item itemvalue="Native Application.tags" />
       <item itemvalue="Native Application.tags-am" />
       <item itemvalue="Native Application.tags-recursive" />
-      <item itemvalue="Native Application.uninstall" />
+      <item itemvalue="Native Application.tags" />
       <item itemvalue="Native Application.uninstall-am" />
       <item itemvalue="Native Application.uninstall-binPROGRAMS" />
       <item itemvalue="Native Application.uninstall-pkgdataDATA" />
       <item itemvalue="Native Application.uninstall-recursive" />
+      <item itemvalue="Native Application.uninstall" />
       <item itemvalue="Native Application.ylwrap" />
     </list>
     <recent_temporary>
@@ -1197,7 +1211,12 @@
       <workItem from="1659890194376" duration="4896000" />
       <workItem from="1734996347159" duration="26897000" />
       <workItem from="1735463146162" duration="9738000" />
-      <workItem from="1735804308865" duration="3554000" />
+      <workItem from="1735804308865" duration="12884000" />
+      <workItem from="1736068754482" duration="2000" />
+      <workItem from="1736239854190" duration="6000" />
+      <workItem from="1737570012739" duration="2406000" />
+      <workItem from="1737626741976" duration="1182000" />
+      <workItem from="1737749447608" duration="4124000" />
     </task>
     <task id="LOCAL-00001" summary="Fix bgh generation issue for beavers">
       <option name="closed" value="true" />
@@ -1231,7 +1250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735761765473</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fix issue with cube evaluation">
+      <option name="closed" value="true" />
+      <created>1735814354443</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735814354443</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1254,7 +1281,8 @@
     <MESSAGE value="Add export move option" />
     <MESSAGE value="Handle double/take" />
     <MESSAGE value="Handle drop/take" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handle drop/take" />
+    <MESSAGE value="Fix issue with cube evaluation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix issue with cube evaluation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1266,19 +1294,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/bgh.c</url>
-          <line>1011</line>
+          <line>1032</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/bgh.c</url>
-          <line>881</line>
-          <option name="timeStamp" value="17" />
+          <line>875</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CLionNativeAppRunConfigurationType">
-        <watch expression="arOutput[0]" language="C++" />
+        <watch expression="ms.anBoard" language="C++" />
+        <watch expression="ms.fTurn" language="C++" />
+        <watch expression="ms" language="C++" />
       </configuration>
     </watches-manager>
   </component>

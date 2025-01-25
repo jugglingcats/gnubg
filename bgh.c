@@ -851,11 +851,32 @@ void write_move_to_file(FILE *f) {
 
         nResign = getResignation(arResign, anBoardMove, &ci, &esResign);
 
-        if (nResign > 0 && nResign > ms.fResignationDeclined) {
-            // ach[0] = achResign[nResign - 1];
-            // ach[1] = 0;
-            fputs("RESIGN", f);
-            return;
+        if (nResign > 0) {
+            // We want to know how many actual points we will be resigning, as engine will offer resignation early
+            // but Hub doesn't support this
+            int actual=1;
+            unsigned int checkers=0;
+            int n=24;
+            while (n >= 0) {
+                unsigned int i = ms.anBoard[ms.fTurn][n];
+                if ( i > 0 ) {
+                    checkers += i;
+                    if ( n >= 18 ) {
+                        // checker in home board, so backgammon
+                        actual=3;
+                        break;
+                    }
+                }
+                n--;
+            }
+            if ( checkers == 15 ) {
+                // no checkers borne off
+                actual=2;
+            }
+            if ( actual == nResign ) {
+                fputs("RESIGN", f);
+                return;
+            }
         }
     }
 

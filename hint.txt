@@ -25,6 +25,6 @@ set player 1 cubedecision evaluation prune false
 set player 1 cubedecision evaluation deterministic true
 set player 1 cubedecision evaluation noise 0.015
 
-set xgid a-B-b-D-C---cE-a---dbb-A--:0:0:1:00:0:0:0:7:10
+set xgid XGID=-B-----a-a-b-a-----cb-b-c-:0:0:-1:00:0:3:0:7:10
 
 export move bgh -
