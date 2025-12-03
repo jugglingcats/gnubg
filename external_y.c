@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.7.4.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2020 Free Software Foundation,
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
    Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -46,10 +46,10 @@
    USER NAME SPACE" below.  */
 
 /* Identify Bison output, and Bison version.  */
-#define YYBISON 30704
+#define YYBISON 30802
 
 /* Bison version string.  */
-#define YYBISON_VERSION "3.7.4"
+#define YYBISON_VERSION "3.8.2"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -314,7 +314,9 @@ typedef union YYSTYPE YYSTYPE;
 
 
 
+
 int yyparse (scancontext *scanner);
+
 
 #endif /* !YY_YY_Y_TAB_H_INCLUDED  */
 /* Symbol kind.  */
@@ -390,7 +392,7 @@ typedef enum yysymbol_kind_t yysymbol_kind_t;
 #line 127 "external_y.y"
 
 
-#line 394 "external_y.c"
+#line 396 "external_y.c"
 
 
 #ifdef short
@@ -428,6 +430,18 @@ typedef __INT_LEAST16_TYPE__ yytype_int16;
 typedef int_least16_t yytype_int16;
 #else
 typedef short yytype_int16;
+#endif
+
+/* Work around bug in HP-UX 11.23, which defines these macros
+   incorrectly for preprocessor constants.  This workaround can likely
+   be removed in 2023, as HPE has promised support for HP-UX 11.23
+   (aka HP-UX 11i v2) only through the end of 2022; see Table 2 of
+   <https://h20195.www2.hpe.com/V2/getpdf.aspx/4AA4-7673ENW.pdf>.  */
+#ifdef __hpux
+# undef UINT_LEAST8_MAX
+# undef UINT_LEAST16_MAX
+# define UINT_LEAST8_MAX 255
+# define UINT_LEAST16_MAX 65535
 #endif
 
 #if defined __UINT_LEAST8_MAX__ && __UINT_LEAST8_MAX__ <= __INT_MAX__
@@ -527,17 +541,23 @@ typedef int yy_state_fast_t;
 
 /* Suppress unused-variable warnings by "using" E.  */
 #if ! defined lint || defined __GNUC__
-# define YYUSE(E) ((void) (E))
+# define YY_USE(E) ((void) (E))
 #else
-# define YYUSE(E) /* empty */
+# define YY_USE(E) /* empty */
 #endif
 
-#if defined __GNUC__ && ! defined __ICC && 407 <= __GNUC__ * 100 + __GNUC_MINOR__
 /* Suppress an incorrect diagnostic about yylval being uninitialized.  */
-# define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                            \
+#if defined __GNUC__ && ! defined __ICC && 406 <= __GNUC__ * 100 + __GNUC_MINOR__
+# if __GNUC__ * 100 + __GNUC_MINOR__ < 407
+#  define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                           \
+    _Pragma ("GCC diagnostic push")                                     \
+    _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")
+# else
+#  define YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN                           \
     _Pragma ("GCC diagnostic push")                                     \
     _Pragma ("GCC diagnostic ignored \"-Wuninitialized\"")              \
     _Pragma ("GCC diagnostic ignored \"-Wmaybe-uninitialized\"")
+# endif
 # define YY_IGNORE_MAYBE_UNINITIALIZED_END      \
     _Pragma ("GCC diagnostic pop")
 #else
@@ -754,7 +774,7 @@ static const yytype_int8 yytranslate[] =
 };
 
 #if YYDEBUG
-  /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
+/* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
        0,   175,   175,   181,   188,   194,   200,   206,   260,   265,
@@ -799,18 +819,6 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#ifdef YYPRINT
-/* YYTOKNUM[NUM] -- (External) token number corresponding to the
-   (internal) symbol number NUM (which must be that of a token).  */
-static const yytype_int16 yytoknum[] =
-{
-       0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
-     265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
-     275,   276,   277,   278,   279,   280,   281,   282,   283,   284,
-     285,   286,   287,   288,    58,    40,    41,    44
-};
-#endif
-
 #define YYPACT_NINF (-49)
 
 #define yypact_value_is_default(Yyn) \
@@ -821,8 +829,8 @@ static const yytype_int16 yytoknum[] =
 #define yytable_value_is_error(Yyn) \
   0
 
-  /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
-     STATE-NUM.  */
+/* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
+   STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
        3,   -49,     7,   -23,    15,    10,    26,     0,    19,    32,
@@ -836,9 +844,9 @@ static const yytype_int8 yypact[] =
      -49,   -49,    48,   -49,   -49
 };
 
-  /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
-     Performed when YYTABLE does not specify something else to do.  Zero
-     means the default is an error.  */
+/* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
+   Performed when YYTABLE does not specify something else to do.  Zero
+   means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
        0,     2,     0,     0,     0,     0,     0,     0,     0,     0,
@@ -852,7 +860,7 @@ static const yytype_int8 yydefact[] =
       27,    18,     0,    40,    17
 };
 
-  /* YYPGOTO[NTERM-NUM].  */
+/* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
      -49,   -49,   -49,   -49,   -16,   -49,   -49,    13,   -49,   -49,
@@ -860,17 +868,17 @@ static const yytype_int8 yypgoto[] =
       69,    20,   -49
 };
 
-  /* YYDEFGOTO[NTERM-NUM].  */
+/* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     9,    21,    10,    72,    73,    83,    52,    71,    27,
+       0,     9,    21,    10,    72,    73,    83,    52,    71,    27,
       56,    11,    12,    13,    32,    33,    34,    35,    36,    37,
       38,    39,    40
 };
 
-  /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
-     positive, shift that token.  If negative, reduce the rule whose
-     number is the opposite.  If YYTABLE_NINF, syntax error.  */
+/* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
+   positive, shift that token.  If negative, reduce the rule whose
+   number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
       41,    28,    59,    29,    30,    31,     1,     2,     3,     4,
@@ -895,8 +903,8 @@ static const yytype_int8 yycheck[] =
       24,    20,     3,    -1,    54
 };
 
-  /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
-     symbol of state STATE-NUM.  */
+/* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
+   state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
        0,     3,     4,     5,     6,     8,    13,    20,    22,    39,
@@ -910,7 +918,7 @@ static const yytype_int8 yystos[] =
       55,    21,    34,    44,    42
 };
 
-  /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
+/* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
        0,    38,    39,    39,    39,    39,    39,    39,    40,    40,
@@ -921,7 +929,7 @@ static const yytype_int8 yyr1[] =
       58,    59,    59,    60,    60,    60
 };
 
-  /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
+/* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     3,     2,     2,     2,     2,     2,     2,
@@ -941,6 +949,7 @@ enum { YYENOMEM = -2 };
 #define YYACCEPT        goto yyacceptlab
 #define YYABORT         goto yyabortlab
 #define YYERROR         goto yyerrorlab
+#define YYNOMEM         goto yyexhaustedlab
 
 
 #define YYRECOVERING()  (!!yyerrstatus)
@@ -981,10 +990,7 @@ do {                                            \
     YYFPRINTF Args;                             \
 } while (0)
 
-/* This macro is provided for backward compatibility. */
-# ifndef YY_LOCATION_PRINT
-#  define YY_LOCATION_PRINT(File, Loc) ((void) 0)
-# endif
+
 
 
 # define YY_SYMBOL_PRINT(Title, Kind, Value, Location)                    \
@@ -1008,16 +1014,12 @@ yy_symbol_value_print (FILE *yyo,
                        yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep, scancontext *scanner)
 {
   FILE *yyoutput = yyo;
-  YYUSE (yyoutput);
-  YYUSE (scanner);
+  YY_USE (yyoutput);
+  YY_USE (scanner);
   if (!yyvaluep)
     return;
-# ifdef YYPRINT
-  if (yykind < YYNTOKENS)
-    YYPRINT (yyo, yytoknum[yykind], *yyvaluep);
-# endif
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-  YYUSE (yykind);
+  YY_USE (yykind);
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 }
 
@@ -1398,8 +1400,8 @@ static void
 yydestruct (const char *yymsg,
             yysymbol_kind_t yykind, YYSTYPE *yyvaluep, scancontext *scanner)
 {
-  YYUSE (yyvaluep);
-  YYUSE (scanner);
+  YY_USE (yyvaluep);
+  YY_USE (scanner);
   if (!yymsg)
     yymsg = "Deleting";
   YY_SYMBOL_PRINT (yymsg, yykind, yyvaluep, yylocationp);
@@ -1410,127 +1412,127 @@ yydestruct (const char *yymsg,
     case YYSYMBOL_E_STRING: /* E_STRING  */
 #line 168 "external_y.y"
             { if (((*yyvaluep).str)) g_string_free(((*yyvaluep).str), TRUE); }
-#line 1414 "external_y.c"
+#line 1416 "external_y.c"
         break;
 
     case YYSYMBOL_setcommand: /* setcommand  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1420 "external_y.c"
+#line 1422 "external_y.c"
         break;
 
     case YYSYMBOL_command: /* command  */
 #line 171 "external_y.y"
             { if (((*yyvaluep).cmd)) { g_free(((*yyvaluep).cmd)); }}
-#line 1426 "external_y.c"
+#line 1428 "external_y.c"
         break;
 
     case YYSYMBOL_board_element: /* board_element  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1432 "external_y.c"
+#line 1434 "external_y.c"
         break;
 
     case YYSYMBOL_board_elements: /* board_elements  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1438 "external_y.c"
+#line 1440 "external_y.c"
         break;
 
     case YYSYMBOL_sessionoption: /* sessionoption  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1444 "external_y.c"
+#line 1446 "external_y.c"
         break;
 
     case YYSYMBOL_evaloption: /* evaloption  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1450 "external_y.c"
+#line 1452 "external_y.c"
         break;
 
     case YYSYMBOL_sessionoptions: /* sessionoptions  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1456 "external_y.c"
+#line 1458 "external_y.c"
         break;
 
     case YYSYMBOL_evaloptions: /* evaloptions  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1462 "external_y.c"
+#line 1464 "external_y.c"
         break;
 
     case YYSYMBOL_boardcommand: /* boardcommand  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1468 "external_y.c"
+#line 1470 "external_y.c"
         break;
 
     case YYSYMBOL_evalcommand: /* evalcommand  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1474 "external_y.c"
+#line 1476 "external_y.c"
         break;
 
     case YYSYMBOL_board: /* board  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1480 "external_y.c"
+#line 1482 "external_y.c"
         break;
 
     case YYSYMBOL_float_type: /* float_type  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1486 "external_y.c"
+#line 1488 "external_y.c"
         break;
 
     case YYSYMBOL_string_type: /* string_type  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1492 "external_y.c"
+#line 1494 "external_y.c"
         break;
 
     case YYSYMBOL_integer_type: /* integer_type  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1498 "external_y.c"
+#line 1500 "external_y.c"
         break;
 
     case YYSYMBOL_boolean_type: /* boolean_type  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1504 "external_y.c"
+#line 1506 "external_y.c"
         break;
 
     case YYSYMBOL_list_type: /* list_type  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1510 "external_y.c"
+#line 1512 "external_y.c"
         break;
 
     case YYSYMBOL_basic_types: /* basic_types  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1516 "external_y.c"
+#line 1518 "external_y.c"
         break;
 
     case YYSYMBOL_list: /* list  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1522 "external_y.c"
+#line 1524 "external_y.c"
         break;
 
     case YYSYMBOL_list_element: /* list_element  */
 #line 170 "external_y.y"
             { if (((*yyvaluep).gv)) { g_value_unsetfree(((*yyvaluep).gv)); }}
-#line 1528 "external_y.c"
+#line 1530 "external_y.c"
         break;
 
     case YYSYMBOL_list_elements: /* list_elements  */
 #line 169 "external_y.y"
             { if (((*yyvaluep).list)) g_list_free(((*yyvaluep).list)); }
-#line 1534 "external_y.c"
+#line 1536 "external_y.c"
         break;
 
       default:
@@ -1607,6 +1609,7 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
   YYDPRINTF ((stderr, "Starting parse\n"));
 
   yychar = YYEMPTY; /* Cause a token to be read.  */
+
   goto yysetstate;
 
 
@@ -1632,7 +1635,7 @@ yysetstate:
 
   if (yyss + yystacksize - 1 <= yyssp)
 #if !defined yyoverflow && !defined YYSTACK_RELOCATE
-    goto yyexhaustedlab;
+    YYNOMEM;
 #else
     {
       /* Get the current used size of the three stacks, in elements.  */
@@ -1660,7 +1663,7 @@ yysetstate:
 # else /* defined YYSTACK_RELOCATE */
       /* Extend the stack our own way.  */
       if (YYMAXDEPTH <= yystacksize)
-        goto yyexhaustedlab;
+        YYNOMEM;
       yystacksize *= 2;
       if (YYMAXDEPTH < yystacksize)
         yystacksize = YYMAXDEPTH;
@@ -1671,7 +1674,7 @@ yysetstate:
           YY_CAST (union yyalloc *,
                    YYSTACK_ALLOC (YY_CAST (YYSIZE_T, YYSTACK_BYTES (yystacksize))));
         if (! yyptr)
-          goto yyexhaustedlab;
+          YYNOMEM;
         YYSTACK_RELOCATE (yyss_alloc, yyss);
         YYSTACK_RELOCATE (yyvs_alloc, yyvs);
 #  undef YYSTACK_RELOCATE
@@ -1692,6 +1695,7 @@ yysetstate:
         YYABORT;
     }
 #endif /* !defined yyoverflow && !defined YYSTACK_RELOCATE */
+
 
   if (yystate == YYFINAL)
     YYACCEPT;
@@ -1810,7 +1814,7 @@ yyreduce:
             extcmd->ct = COMMAND_NONE;
             YYACCEPT;
         }
-#line 1814 "external_y.c"
+#line 1818 "external_y.c"
     break;
 
   case 3: /* commands: SET setcommand EOL  */
@@ -1820,7 +1824,7 @@ yyreduce:
             extcmd->ct = COMMAND_SET;
             YYACCEPT;
         }
-#line 1824 "external_y.c"
+#line 1828 "external_y.c"
     break;
 
   case 4: /* commands: INTERFACEVERSION EOL  */
@@ -1829,7 +1833,7 @@ yyreduce:
             extcmd->ct = COMMAND_VERSION;
             YYACCEPT;
         }
-#line 1833 "external_y.c"
+#line 1837 "external_y.c"
     break;
 
   case 5: /* commands: HELP EOL  */
@@ -1838,7 +1842,7 @@ yyreduce:
             extcmd->ct = COMMAND_HELP;
             YYACCEPT;
         }
-#line 1842 "external_y.c"
+#line 1846 "external_y.c"
     break;
 
   case 6: /* commands: EXIT EOL  */
@@ -1847,7 +1851,7 @@ yyreduce:
             extcmd->ct = COMMAND_EXIT;
             YYACCEPT;
         }
-#line 1851 "external_y.c"
+#line 1855 "external_y.c"
     break;
 
   case 7: /* commands: command EOL  */
@@ -1902,7 +1906,7 @@ yyreduce:
                 }
             }
         }
-#line 1906 "external_y.c"
+#line 1910 "external_y.c"
     break;
 
   case 8: /* setcommand: DEBUG boolean_type  */
@@ -1910,7 +1914,7 @@ yyreduce:
         {
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_DEBUG, (yyvsp[0].gv));
         }
-#line 1914 "external_y.c"
+#line 1918 "external_y.c"
     break;
 
   case 9: /* setcommand: E_INTERFACE NEW  */
@@ -1919,7 +1923,7 @@ yyreduce:
             GVALUE_CREATE(G_TYPE_INT, int, 1, gvint); 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_NEWINTERFACE, gvint);
         }
-#line 1923 "external_y.c"
+#line 1927 "external_y.c"
     break;
 
   case 10: /* setcommand: E_INTERFACE OLD  */
@@ -1928,7 +1932,7 @@ yyreduce:
             GVALUE_CREATE(G_TYPE_INT, int, 0, gvint); 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_NEWINTERFACE, gvint);
         }
-#line 1932 "external_y.c"
+#line 1936 "external_y.c"
     break;
 
   case 11: /* setcommand: PROMPT string_type  */
@@ -1936,7 +1940,7 @@ yyreduce:
         {
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_PROMPT, (yyvsp[0].gv));
         }
-#line 1940 "external_y.c"
+#line 1944 "external_y.c"
     break;
 
   case 12: /* command: boardcommand  */
@@ -1947,7 +1951,7 @@ yyreduce:
             cmdInfo->cmdType = COMMAND_FIBSBOARD;
             (yyval.cmd) = cmdInfo;
         }
-#line 1951 "external_y.c"
+#line 1955 "external_y.c"
     break;
 
   case 13: /* command: evalcommand  */
@@ -1958,7 +1962,7 @@ yyreduce:
             cmdInfo->cmdType = COMMAND_EVALUATION;
             (yyval.cmd) = cmdInfo;
         }
-#line 1962 "external_y.c"
+#line 1966 "external_y.c"
     break;
 
   case 14: /* command: DISABLED list  */
@@ -1971,7 +1975,7 @@ yyreduce:
             cmdInfo->cmdType = COMMAND_LIST;
             (yyval.cmd) = cmdInfo;
         }
-#line 1975 "external_y.c"
+#line 1979 "external_y.c"
     break;
 
   case 16: /* board_elements: board_element  */
@@ -1979,7 +1983,7 @@ yyreduce:
         { 
             (yyval.list) = g_list_prepend(NULL, (yyvsp[0].gv)); 
         }
-#line 1983 "external_y.c"
+#line 1987 "external_y.c"
     break;
 
   case 17: /* board_elements: board_elements ':' board_element  */
@@ -1987,7 +1991,7 @@ yyreduce:
         { 
             (yyval.list) = g_list_prepend((yyvsp[-2].list), (yyvsp[0].gv)); 
         }
-#line 1991 "external_y.c"
+#line 1995 "external_y.c"
     break;
 
   case 19: /* sessionoption: JACOBYRULE boolean_type  */
@@ -1995,7 +1999,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_JACOBYRULE, (yyvsp[0].gv)); 
         }
-#line 1999 "external_y.c"
+#line 2003 "external_y.c"
     break;
 
   case 20: /* sessionoption: CRAWFORDRULE boolean_type  */
@@ -2003,7 +2007,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_CRAWFORDRULE, (yyvsp[0].gv));
         }
-#line 2007 "external_y.c"
+#line 2011 "external_y.c"
     break;
 
   case 21: /* sessionoption: RESIGNATION integer_type  */
@@ -2011,7 +2015,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_RESIGNATION, (yyvsp[0].gv));
         }
-#line 2015 "external_y.c"
+#line 2019 "external_y.c"
     break;
 
   case 22: /* sessionoption: BEAVERS boolean_type  */
@@ -2019,7 +2023,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_BEAVERS, (yyvsp[0].gv));
         }
-#line 2023 "external_y.c"
+#line 2027 "external_y.c"
     break;
 
   case 23: /* evaloption: PLIES integer_type  */
@@ -2027,7 +2031,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_PLIES, (yyvsp[0].gv)); 
         }
-#line 2031 "external_y.c"
+#line 2035 "external_y.c"
     break;
 
   case 24: /* evaloption: NOISE float_type  */
@@ -2035,7 +2039,7 @@ yyreduce:
         {
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_NOISE, (yyvsp[0].gv)); 
         }
-#line 2039 "external_y.c"
+#line 2043 "external_y.c"
     break;
 
   case 25: /* evaloption: NOISE integer_type  */
@@ -2046,7 +2050,7 @@ yyreduce:
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_NOISE, gvfloat); 
             g_value_unsetfree((yyvsp[0].gv));
         }
-#line 2050 "external_y.c"
+#line 2054 "external_y.c"
     break;
 
   case 26: /* evaloption: PRUNE  */
@@ -2054,7 +2058,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2int_tuple (KEY_STR_PRUNE, TRUE);
         }
-#line 2058 "external_y.c"
+#line 2062 "external_y.c"
     break;
 
   case 27: /* evaloption: PRUNE boolean_type  */
@@ -2062,7 +2066,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_PRUNE, (yyvsp[0].gv));
         }
-#line 2066 "external_y.c"
+#line 2070 "external_y.c"
     break;
 
   case 28: /* evaloption: DETERMINISTIC  */
@@ -2070,7 +2074,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2int_tuple (KEY_STR_DETERMINISTIC, TRUE);
         }
-#line 2074 "external_y.c"
+#line 2078 "external_y.c"
     break;
 
   case 29: /* evaloption: DETERMINISTIC boolean_type  */
@@ -2078,7 +2082,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_DETERMINISTIC, (yyvsp[0].gv));
         }
-#line 2082 "external_y.c"
+#line 2086 "external_y.c"
     break;
 
   case 30: /* evaloption: CUBE boolean_type  */
@@ -2086,7 +2090,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2gvalue_tuple (KEY_STR_CUBEFUL, (yyvsp[0].gv));
         }
-#line 2090 "external_y.c"
+#line 2094 "external_y.c"
     break;
 
   case 31: /* evaloption: CUBEFUL  */
@@ -2094,7 +2098,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2int_tuple (KEY_STR_CUBEFUL, TRUE); 
         }
-#line 2098 "external_y.c"
+#line 2102 "external_y.c"
     break;
 
   case 32: /* evaloption: CUBELESS  */
@@ -2102,7 +2106,7 @@ yyreduce:
         { 
             (yyval.list) = create_str2int_tuple (KEY_STR_CUBEFUL, FALSE); 
         }
-#line 2106 "external_y.c"
+#line 2110 "external_y.c"
     break;
 
   case 33: /* sessionoptions: %empty  */
@@ -2123,7 +2127,7 @@ yyreduce:
                                resignentry), beaversentry);
             (yyval.list) = defaults;
         }
-#line 2127 "external_y.c"
+#line 2131 "external_y.c"
     break;
 
   case 34: /* sessionoptions: sessionoptions sessionoption  */
@@ -2131,7 +2135,7 @@ yyreduce:
         { 
             STR2GV_MAP_ADD_ENTRY((yyvsp[-1].list), (yyvsp[0].list), (yyval.list)); 
         }
-#line 2135 "external_y.c"
+#line 2139 "external_y.c"
     break;
 
   case 35: /* evaloptions: %empty  */
@@ -2152,7 +2156,7 @@ yyreduce:
                                resignentry), beaversentry);
             (yyval.list) = defaults;
         }
-#line 2156 "external_y.c"
+#line 2160 "external_y.c"
     break;
 
   case 36: /* evaloptions: evaloptions evaloption  */
@@ -2160,7 +2164,7 @@ yyreduce:
         { 
             STR2GV_MAP_ADD_ENTRY((yyvsp[-1].list), (yyvsp[0].list), (yyval.list)); 
         }
-#line 2164 "external_y.c"
+#line 2168 "external_y.c"
     break;
 
   case 37: /* evaloptions: evaloptions sessionoption  */
@@ -2168,7 +2172,7 @@ yyreduce:
         { 
             STR2GV_MAP_ADD_ENTRY((yyvsp[-1].list), (yyvsp[0].list), (yyval.list)); 
         }
-#line 2172 "external_y.c"
+#line 2176 "external_y.c"
     break;
 
   case 38: /* boardcommand: board sessionoptions  */
@@ -2183,7 +2187,7 @@ yyreduce:
             g_list_free((yyvsp[-1].list));
             g_list_free((yyvsp[0].list));
         }
-#line 2187 "external_y.c"
+#line 2191 "external_y.c"
     break;
 
   case 39: /* evalcommand: EVALUATION FIBSBOARD board evaloptions  */
@@ -2199,7 +2203,7 @@ yyreduce:
             g_list_free((yyvsp[-1].list));
             g_list_free((yyvsp[0].list));
         }
-#line 2203 "external_y.c"
+#line 2207 "external_y.c"
     break;
 
   case 40: /* board: FIBSBOARD E_STRING ':' E_STRING ':' board_elements endboard  */
@@ -2212,7 +2216,7 @@ yyreduce:
             g_string_free((yyvsp[-3].str), TRUE);
             g_string_free((yyvsp[-5].str), TRUE);
         }
-#line 2216 "external_y.c"
+#line 2220 "external_y.c"
     break;
 
   case 41: /* float_type: E_FLOAT  */
@@ -2221,7 +2225,7 @@ yyreduce:
             GVALUE_CREATE(G_TYPE_FLOAT, float, (yyvsp[0].floatnum), gvfloat); 
             (yyval.gv) = gvfloat; 
         }
-#line 2225 "external_y.c"
+#line 2229 "external_y.c"
     break;
 
   case 42: /* string_type: E_STRING  */
@@ -2231,7 +2235,7 @@ yyreduce:
             g_string_free ((yyvsp[0].str), TRUE); 
             (yyval.gv) = gvstr; 
         }
-#line 2235 "external_y.c"
+#line 2239 "external_y.c"
     break;
 
   case 43: /* integer_type: E_INTEGER  */
@@ -2240,7 +2244,7 @@ yyreduce:
             GVALUE_CREATE(G_TYPE_INT, int, (yyvsp[0].intnum), gvint); 
             (yyval.gv) = gvint; 
         }
-#line 2244 "external_y.c"
+#line 2248 "external_y.c"
     break;
 
   case 44: /* boolean_type: E_BOOLEAN  */
@@ -2249,7 +2253,7 @@ yyreduce:
             GVALUE_CREATE(G_TYPE_INT, int, (yyvsp[0].bool), gvint); 
             (yyval.gv) = gvint; 
         }
-#line 2253 "external_y.c"
+#line 2257 "external_y.c"
     break;
 
   case 45: /* list_type: list  */
@@ -2259,7 +2263,7 @@ yyreduce:
             g_list_free((yyvsp[0].list));
             (yyval.gv) = gvptr;
         }
-#line 2263 "external_y.c"
+#line 2267 "external_y.c"
     break;
 
   case 50: /* list: '(' list_elements ')'  */
@@ -2267,7 +2271,7 @@ yyreduce:
         { 
             (yyval.list) = g_list_reverse((yyvsp[-1].list));
         }
-#line 2271 "external_y.c"
+#line 2275 "external_y.c"
     break;
 
   case 53: /* list_elements: %empty  */
@@ -2275,7 +2279,7 @@ yyreduce:
         { 
             (yyval.list) = NULL; 
         }
-#line 2279 "external_y.c"
+#line 2283 "external_y.c"
     break;
 
   case 54: /* list_elements: list_element  */
@@ -2283,7 +2287,7 @@ yyreduce:
         { 
             (yyval.list) = g_list_prepend(NULL, (yyvsp[0].gv));
         }
-#line 2287 "external_y.c"
+#line 2291 "external_y.c"
     break;
 
   case 55: /* list_elements: list_elements ',' list_element  */
@@ -2291,11 +2295,11 @@ yyreduce:
         { 
             (yyval.list) = g_list_prepend((yyvsp[-2].list), (yyvsp[0].gv)); 
         }
-#line 2295 "external_y.c"
+#line 2299 "external_y.c"
     break;
 
 
-#line 2299 "external_y.c"
+#line 2303 "external_y.c"
 
       default: break;
     }
@@ -2371,7 +2375,7 @@ yyerrlab:
           }
         yyerror (scanner, yymsgp);
         if (yysyntax_error_status == YYENOMEM)
-          goto yyexhaustedlab;
+          YYNOMEM;
       }
     }
 
@@ -2407,6 +2411,7 @@ yyerrorlab:
      label yyerrorlab therefore never appears in user code.  */
   if (0)
     YYERROR;
+  ++yynerrs;
 
   /* Do not reclaim the symbols of the rule whose action triggered
      this YYERROR.  */
@@ -2467,7 +2472,7 @@ yyerrlab1:
 `-------------------------------------*/
 yyacceptlab:
   yyresult = 0;
-  goto yyreturn;
+  goto yyreturnlab;
 
 
 /*-----------------------------------.
@@ -2475,24 +2480,22 @@ yyacceptlab:
 `-----------------------------------*/
 yyabortlab:
   yyresult = 1;
-  goto yyreturn;
+  goto yyreturnlab;
 
 
-#if 1
-/*-------------------------------------------------.
-| yyexhaustedlab -- memory exhaustion comes here.  |
-`-------------------------------------------------*/
+/*-----------------------------------------------------------.
+| yyexhaustedlab -- YYNOMEM (memory exhaustion) comes here.  |
+`-----------------------------------------------------------*/
 yyexhaustedlab:
   yyerror (scanner, YY_("memory exhausted"));
   yyresult = 2;
-  goto yyreturn;
-#endif
+  goto yyreturnlab;
 
 
-/*-------------------------------------------------------.
-| yyreturn -- parsing is finished, clean up and return.  |
-`-------------------------------------------------------*/
-yyreturn:
+/*----------------------------------------------------------.
+| yyreturnlab -- parsing is finished, clean up and return.  |
+`----------------------------------------------------------*/
+yyreturnlab:
   if (yychar != YYEMPTY)
     {
       /* Make sure we have latest lookahead translation.  See comments at

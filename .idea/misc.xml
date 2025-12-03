@@ -14,10 +14,11 @@
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
-        <option name="preConfigureCommands" value="#!/bin/sh&#10;#&#10;# GNU Autotools template, feel free to customize.&#10;#&#10;cd /tmp/gnubg&#10;aclocal &amp;&amp; automake &amp;&amp; autoreconf &amp;&amp; ./configure --with-python=no" />
+        <option name="preConfigureCommands" value="#!/bin/sh&#10;#&#10;# GNU Autotools template, feel free to customize.&#10;#&#10;cd /home/alfie/gnubg&#10;aclocal &amp;&amp; automake &amp;&amp; autoreconf &amp;&amp; ./configure --with-python=no" />
         <option name="version" value="2" />
       </MakefileProjectSettings>
     </option>
   </component>
   <component name="MakefileWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+  <component name="WestSettings"><![CDATA[{}]]></component>
 </project>
