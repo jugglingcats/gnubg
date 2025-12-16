@@ -1031,7 +1031,34 @@ extern void CommandExportHintBackgammonHub(char *sz) {
     GString *gsz = g_string_new(NULL);
 
     if (!ms.anDice[0] && !ms.fDoubled) {
-        output("GIVE HINT ON DOUBLE/NO DOUBLE\n");
+        cubeinfo ci;
+        moverecord *pmr;
+        int hist;
+        doubletype dt = DoubleType(ms.fDoubled, ms.fMove, ms.fTurn);
+        GetMatchStateCubeInfo(&ci, &ms);
+        pmr = get_current_moverecord(&hist);
+
+        static decisionData dd;
+        dd.pboard = msBoard();
+        dd.pci = &ci;
+        dd.pes = GetEvalCube();
+        if (RunAsyncProcess((AsyncFun) asyncCubeDecision, &dd, _("Considering cube action...")) != 0)
+            return;
+
+        pmr_cubedata_set(pmr, dd.pes, dd.aarOutput, dd.aarStdDev);
+
+        const int did_double = (pmr->mt == MOVE_DOUBLE) ? TRUE : FALSE;
+
+        find_skills(pmr, &ms, did_double, -1);
+
+        g_string_append(gsz, OutputCubeAnalysisBgh(pmr->CubeDecPtr->aarOutput,
+                          pmr->CubeDecPtr->aarStdDev,
+                          dd.pes, &ci));
+        // BghPrintCubeAnalysisTable(gsz,
+        //                   pmr->CubeDecPtr->aarOutput,
+        //                   pmr->CubeDecPtr->aarStdDev,
+        //                   pmr->fPlayer, &pmr->CubeDecPtr->esDouble, &ci, FALSE, -1, pmr->stCube,
+        //                   SKILL_NONE);
     } else if (ms.fDoubled) {
         output("GIVE HINT ON TAKE\n");
     } else if (ms.anDice[0]) {
@@ -1085,15 +1112,25 @@ extern void CommandExportHintBackgammonHub(char *sz) {
         BghFormatCheckerMoves(gsz, &ms, pmr, &ci);
     }
 
-    if ((pf = gnubg_g_fopen(sz, "w")) == 0) {
-        outputerr(sz);
-        g_free(sz);
-        return;
+    FILE *f;
+
+    if ( strcmp("-", sz)==0 ) {
+        f=stdout;
+    } else {
+        f=fopen(sz, "w");
     }
 
-    fputs(gsz->str, pf);
+    // if ((pf = gnubg_g_fopen(sz, "w")) == 0) {
+    //     outputerr(sz);
+    //     g_free(sz);
+    //     return;
+    // }
+
+    fputs(gsz->str, f);
     g_string_free(gsz, TRUE);
-    fclose(pf);
+    if ( f != stdout ) {
+        fclose(f);
+    }
 }
 
 extern void CommandExportMatchBackgammonHub(char *sz) {
