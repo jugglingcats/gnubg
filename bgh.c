@@ -811,36 +811,10 @@ static void ExportGameText(FILE *pf, listOLD *plGame, const int iGame, const int
 }
 
 
-
-
-
-void write_move_to_file(FILE *f) {
-    output("Exporting move\n");
-    moverecord *pmr;
-    cubeinfo ci;
-    float arDouble[4], rDoublePoint;
-
-    GetMatchStateCubeInfo(&ci, &ms);
-
-    if (ms.fResigned) {
-        output("Player resigned!\n");
-        exit(-1);
-    }
-
-    findData fd;
-    TanBoard anBoardMove;
-    float arResign[NUM_ROLLOUT_OUTPUTS];
-    static char achResign[3] = { 'n', 'g', 'b' };
-    char ach[2];
-    /* Don't use the global board for this call, to avoid
-         * race conditions with updating the board and aborting the
-         * move with an interrupt. */
-    memcpy(anBoardMove, msBoard(), sizeof(TanBoard));
-
-    /* Consider resigning -- no point wasting time over the decision,
-         * so only evaluate at 0 plies. */
-
+int should_resign(cubeinfo ci)
+{
     if (ClassifyPosition(msBoard(), ms.bgv) <= CLASS_RACE) {
+        float arResign[NUM_ROLLOUT_OUTPUTS];
         int nResign;
 
         evalcontext ecResign = { FALSE, 0, FALSE, TRUE, 0.0 };
@@ -849,6 +823,8 @@ void write_move_to_file(FILE *f) {
         esResign.et = EVAL_EVAL;
         esResign.ec = ecResign;
 
+        TanBoard anBoardMove;
+        memcpy(anBoardMove, msBoard(), sizeof(TanBoard));
         nResign = getResignation(arResign, anBoardMove, &ci, &esResign);
 
         if (nResign > 0) {
@@ -874,10 +850,40 @@ void write_move_to_file(FILE *f) {
                 actual=2;
             }
             if ( actual == nResign ) {
-                fputs("RESIGN", f);
-                return;
+                return 1;
             }
         }
+    }
+    return 0;
+}
+
+void write_move_to_file(FILE *f) {
+    output("Exporting move\n");
+    moverecord *pmr;
+    cubeinfo ci;
+    float arDouble[4], rDoublePoint;
+
+    GetMatchStateCubeInfo(&ci, &ms);
+
+    if (ms.fResigned) {
+        output("Player resigned!\n");
+        exit(-1);
+    }
+
+    findData fd;
+    TanBoard anBoardMove;
+    static char achResign[3] = { 'n', 'g', 'b' };
+    char ach[2];
+    /* Don't use the global board for this call, to avoid
+         * race conditions with updating the board and aborting the
+         * move with an interrupt. */
+    memcpy(anBoardMove, msBoard(), sizeof(TanBoard));
+
+    /* Consider resigning -- no point wasting time over the decision,
+    * so only evaluate at 0 plies. */
+    if (should_resign(ci)) {
+        fputs("RESIGN", f);
+        return;
     }
 
     /* Consider doubling */
@@ -1021,21 +1027,26 @@ extern void CommandExportMoveBackgammonHub(char *sz)
 
 
 extern void CommandExportHintBackgammonHub(char *sz) {
-    FILE *pf;
     sz = NextToken(&sz);
     if (!sz || !*sz) {
         outputl(_("You must specify a file to export to (see `help export " "match text')."));
         return;
     }
 
+    cubeinfo ci;
+    GetMatchStateCubeInfo(&ci, &ms);
+
     GString *gsz = g_string_new(NULL);
+    if ( should_resign(ci) ) {
+        g_string_append(gsz, "R~\n");
+    } else {
+        g_string_append(gsz, "X~\n");
+    }
 
     if (!ms.anDice[0] && !ms.fDoubled) {
-        cubeinfo ci;
         moverecord *pmr;
         int hist;
         doubletype dt = DoubleType(ms.fDoubled, ms.fMove, ms.fTurn);
-        GetMatchStateCubeInfo(&ci, &ms);
         pmr = get_current_moverecord(&hist);
 
         static decisionData dd;
