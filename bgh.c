@@ -1073,13 +1073,10 @@ extern void CommandExportHintBackgammonHub(char *sz) {
     } else if (ms.fDoubled) {
         output("GIVE HINT ON TAKE\n");
     } else if (ms.anDice[0]) {
-        cubeinfo ci;
         int hist;
         movelist ml;
         findData fd;
         const int fSaveShowProg = fShowProgress;
-
-        GetMatchStateCubeInfo(&ci, &ms);
 
         moverecord* pmr = get_current_moverecord(&hist);
         if (!pmr)
